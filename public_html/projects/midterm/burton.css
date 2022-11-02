@@ -1,0 +1,143 @@
+/*Universal*/
+h1 {
+  font-family: Arial;
+}
+
+/*Body*/
+body {
+  background: linear-gradient(to bottom, #2E2E2E, #1F1F1F) 100%;
+  background: black;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  font-family: Times New Roman;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+
+}
+.gradient {  
+  background: linear-gradient(to bottom, #2E2E2E, #1F1F1F) 100%;
+}
+ul {
+  list-style-type: none;
+}
+
+/*Navigation bar*/
+nav {
+  background-color: #1F1F1F;
+  box-shadow: 0px 2px 5px black;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+}
+nav li {
+  box-shadow: 0px 2px 5px black;
+  display: inline-block;
+  padding: 0px 1px;
+}
+nav a {
+  background-color: #BA2323;
+  color: #FFFFFF;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+nav li a:hover{
+  background-color: #E64545;
+  color: #FFFFFF;
+}
+
+/*Change Log*/
+.changelog-item {
+  background: #1F1F1F;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px black;
+  display: block;
+  margin: 0vw 20vw auto;
+  padding: 1vw;
+}
+.changelog-item .date{
+  color: #FFFFFF;
+  padding: 5px;
+}
+.added{
+  color: #1DB331;
+  border-color: #1DB331;
+  border-style: none none solid none;
+  border-width: 5px;
+}
+.removed{
+  color: #BA2323;
+  border-color: #BA2323;
+  border-style: none none solid none;
+  border-width: 5px;
+}
+.fixed{
+  color: #F59E14;
+  border-color: #F59E14;
+  border-style: none none solid none;
+  border-width: 5px;
+}
+.container {
+  background: #2E2E2E;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px black;
+  display: block;
+  margin: 10px 0px;
+  padding: 10px 200px;
+}
+
+/*Feedback*/
+form {
+  margin: 0 auto;
+  width: 250px;
+}
+input {
+  margin-top: 6px;
+  background-color: #7f7f7f;
+}
+fieldset{
+  margin-top: 6px;
+}
+textarea {
+  padding: 5px 50px 20px 5px;
+  margin-bottom: 6px;
+}
+select {
+  margin-bottom: 6px;
+}
+
+a:link {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/*Images*/
+.img-border {
+  border: 5px solid  white;
+}
+
+/*Footer*/
+footer {
+  background-color: #1F1F1F;
+  bottom: 0;
+  box-shadow: 0px 2px 5px black;
+  color: #999999;
+  height: 2.5rem;  
+  padding: 0px 0px 5px 0px;
+  text-align: center;
+  width: 100%;
+}
+
+      

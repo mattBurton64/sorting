@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Background</title>
+    <style type="text/css">
+    body {
+      background: linear-gradient(to bottom, rgba(3,75, 85, 1) 0%, rgba(3,75, 82, 0) 100%);
+      height: 100%;
+      margin: 0;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    h1 {
+      text-align: center;
+      border-bottom: 5px;
+      border-color: #FFFFFF;
+      border-bottom-style: solid;
+      color: #FFFFFF;
+      padding-bottom: 5px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(8, 5vw);
+      grid-template-rows: repeat(6,3vw);
+      grid-gap: 15px;
+    }
+    .gallery img{
+      border-radius: 50px;
+      width: 5vw; 
+      height: 5vw;
+    }
+    .gallery img:hover{
+      transform: scale(1.2);
+      border: 1px solid #FFF;
+    }
+    </style>
+
+  </head>
+  <body>
+    <h1 style="font-family:Helvetica">This Page Utilizes Images</h1>
+    <div class="gallery">
+      <figure class="item">
+        <img src="images/brawl-stars.jpeg" alt="Brawl Stars">
+      </figure>
+      <figure class="item">
+        <img src="images/hollow-knight.jpeg" alt="Hollow Knight">
+      </figure>
+      <figure class="item">
+        <img src="images/music.jpeg" alt="Microphone">
+      </figure>
+      <figure class="item">
+        <img src="images/skateboarding.jpeg" alt="Skateboarding">
+      </figure>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+  background-image: url(images/barryBenson.jpg);  
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#logo{
+  display: block;
+  margin: 0 auto;
+}
+form {
+  border: 5px solid #FFB121;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+  width: 450px;
+}
+input {
+  background-color: #FFFFFF;
+  display: inline-block;
+  margin: .15em 0 .15em 0;
+  text-align: center;
+}
+#buttons input {
+  background-color: #FFB121;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px black;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1em;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+}
+footer {
+  bottom: 0;
+  color: #FFB121;
+  margin: .5em 0 .5em 0;
+  text-align: center;
+}

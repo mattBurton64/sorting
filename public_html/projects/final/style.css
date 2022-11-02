@@ -1,0 +1,74 @@
+.line {
+  border-bottom-style:solid;
+  border-color: #b4cede;
+  border-width: 1vw;
+}
+body {
+  font-family: Verdana, Arial, sans-serif;
+}
+h2 {
+  margin-left: 3vw;
+}
+img.sports {
+  height: 300px;
+  padding: 1vw;
+  object-fit: cover;
+  width: 30vw;
+}
+.center {
+  text-align: center;
+}
+nav {
+  background-color: #000000;
+  padding: 2vw 2vw;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  font-family: Verdana, Arial, sans-serif;
+  color: #FFFFFF;
+  padding: 0 1vw;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #CCCCCC;
+  text-decoration: underline;
+}
+.container {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1vw 2vw 2vw 2vw; 
+  text-align: center;
+}
+table {
+  margin: 0 auto;
+}
+form {
+  margin: 1vw auto;
+  width: 20%;
+}
+label {
+  margin: .5vw 0 .5vw 0;
+}
+input {
+  background-color: #FFFFFF;
+  margin: 0.5vw 0;
+}
+fieldset{
+  margin: 0.5vw 0;
+}
+textarea {
+  padding: .5vw 4vw 2vw .5vw;
+  margin: 1vw 0 0 0;
+  resize: none;
+}
+select {
+  margin: 0.5vw 0;
+}
+     

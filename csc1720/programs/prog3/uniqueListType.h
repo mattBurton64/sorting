@@ -1,0 +1,53 @@
+/*
+Matt Burton
+csc1720
+3/21/21
+A class used for unique lists meaning no duplicates
+*/
+#ifndef UniqueList_TYPE
+#define UniqueList_TYPE
+#include "unorderedArrayListType.h" 
+using namespace std;
+
+template<typename T>
+class uniqueListType: public unorderedArrayListType
+{
+	using unorderedArrayListType<T>::maxSize;
+	using unorderedArrayListType<T>::length;
+	using unorderedArrayListType<T>::seqSearch();
+
+  	public:
+      //Constructor
+      uniqueListType(int size = 100);
+
+      /* insertAt Function to insert a string in a list
+         Precondition: the list is not full, the location is
+								within the range of 0-maxListSize, and
+								insertItem is a string, the string in
+								insertItem is not in the list already
+         Postcondition: The list is updated so that insertItem
+								is now at list[location] = insertItem
+								and all elements whose index is
+								>= location are shifted right 1.
+								Also the length is increased by 1
+      */
+      void insertAt(int location, T insertItem);
+  
+      /* insertEnd Function to insert a srting at the end of a list
+         Precondition: The list is not full, and
+								insertItem is a string.
+								insertItem is not in the list already.
+         Postcondition: list[length] = insertItem; length++
+      */
+      void insertEnd(T insertItem);
+
+      /* replaceAt Function to replace an element in a list
+         Precondition: The list does not contain repItem in
+								itself anywhere and location is an
+								int between 0-length
+         Postcondition: list[location] = repItem;
+      */
+      void replaceAt(int location, T repItem);
+}; 
+#include "uniqueListType.cpp"   
+#endif

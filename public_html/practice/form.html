@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        background: linear-gradient(to bottom, #15202B, #22303C);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #FFFFFF; 
+        margin-top: 80px;
+      }
+      form {
+        margin: 0 auto;
+        width: 250px;
+      }
+      input {
+        margin-top: 6px;
+        background-color: #7f7f7f;
+      }
+      fieldset{
+        margin-top: 6px;
+      }
+      textarea {
+        padding: 5px 50px 20px 5px;
+        margin-bottom: 6px;
+      }
+      select {
+        margin-bottom: 6px;
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      
+      <label for="firstName">First Name: </label>
+      <input type="text" required tabindex=1><br>
+      
+      <label for="middleName">Middle Name: </label>
+      <input type="text" tabindex=2><br>
+      
+      <label for="lastName">Last Name: </label>
+      <input type="text" required tabindex=3><br>
+      
+      <label for="email">Email: </label>
+      <input type="email" required tabindex=4><br>
+      
+      <label for="password">Password: </label>
+      <input type="password" required tabindex=5><br>
+    
+      <fieldset>
+        <legend>Sports you like</legend>
+        <label for="foootball">Football</label>
+        <input type="checkbox" id="football" tabindex=6><br>
+        <label for="basketball">Basketball</label>
+        <input type="checkbox" id="basketball" tabindex=7><br>
+        <label for="soccer">Soccer</label>
+        <input type="checkbox" id="soccer" tabindex=8><br>
+        <label for="basetball">Baseball</label>
+        <input type="checkbox" id="baseball" tabindex=9><br>
+      </fieldset><br>
+    
+      <fieldset>
+        <legend>Gender</legend>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="Gender" value="male" tabindex=10><br>
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="Gender" value="female" tabindex=11><br>
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="Gender" value="other" tabindex=12><br>
+      </fieldset><br>
+
+      <label for="feedback">Feedback: </label>
+      <textarea tabindex=13>Provide feedback here...</textarea><br>
+      
+      <label for="state">State: </label>
+      <select tabindex=14>
+        <option>NC</option>
+        <option>NY</option>
+        <option>VA</option>
+       </select><br>
+       
+       <input type="submit" tabindex=15></input>
+       <input type="reset" tabindex=16></input>
+    
+    </form>
+    <footer>
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Matthew Burton</p>
+    </footer> 
+  </body>
+</html>
