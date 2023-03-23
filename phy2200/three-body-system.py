@@ -47,6 +47,48 @@ param[1] = m1
 param[2] = m2
 param[3] = m3
 
+def dxdt(x,t,param):
+    G = param[0]
+    m1 = param[1]
+    m2 = param[2]
+    m3 = param[3]
+    
+    x1 = x[0]
+    y1 = x[1]
+    x2 = x[2]
+    y2 = x[3]
+    x3 = x[4]
+    y3 = x[5]
+    vx1 = x[6]
+    vy1 = x[7]
+    vx2 = x[8]
+    vy2 = x[9]
+    vx3 = x[10]
+    vy3 = x[11]
+    
+    dx1 = vx1
+    dy1 = vy1
+    dx2 = vx2
+    dy2 = vy2
+    dx3 = vx3
+    dy3 = vy3
+    
+    dvx1 = ((-1 * ((G * m1 * m2) * (x1 - x2) / ((x1 - x2)**2 + (y1 - y2)**2 + ϵ)**(3/2))) - (-1 * ((G * m1 * m3) * (x1 - x3) / ((x1 - x3)**2 + (y1 - y3)**2 + ϵ)**(3/2)))) / m1
+    dvy1 = ((-1 * ((G * m1 * m2) * (y1 - y2) / ((x1 - x2)**2 + (y1 - y2)**2 + ϵ)**(3/2))) - (-1 * ((G * m1 * m3) * (y1 - y3) / ((x1 - x3)**2 + (y1 - y3)**2 + ϵ)**(3/2)))) / m1
+    dvx2 = ((-1 * ((G * m2 * m1) * (x2 - x1) / ((x2 - x1)**2 + (y2 - y1)**2 + ϵ)**(3/2))) - (-1 * ((G * m2 * m3) * (x2 - x3) / ((x2 - x3)**2 + (y2 - y3)**2 + ϵ)**(3/2)))) / m2
+    dvy2 = ((-1 * ((G * m2 * m1) * (y2 - y1) / ((x2 - x1)**2 + (y2 - y1)**2 + ϵ)**(3/2))) - (-1 * ((G * m2 * m3) * (y2 - y3) / ((x2 - x3)**2 + (y2 - y3)**2 + ϵ)**(3/2)))) / m2
+    dvx3 = ((-1 * ((G * m3 * m1) * (x3 - x1) / ((x3 - x1)**2 + (y3 - y1)**2 + ϵ)**(3/2))) - (-1 * ((G * m3 * m2) * (x3 - x2) / ((x3 - x2)**2 + (y3 - y2)**2 + ϵ)**(3/2)))) / m3
+    dvy3 = ((-1 * ((G * m3 * m1) * (y3 - y1) / ((x3 - x1)**2 + (y3 - y1)**2 + ϵ)**(3/2))) - (-1 * ((G * m3 * m2) * (y3 - y2) / ((x3 - x2)**2 + (y3 - y2)**2 + ϵ)**(3/2)))) / m3
+    
+    return np.array([dx1, dy1, dx2, dy2, dx3, dy3, dvx1, dvy1, dvx2, dvy2, dvx3, dvy3])
+
+def rk4step(dxdt,t,x,dt,param):
+    k1 = dt * dxdt(x,t,param)
+    k2 = dt * dxdt(x + 0.5 * k1,t + 0.5 * dt, param)
+    k3 = dt * dxdt(x + 0.5 * k2,t + 0.5 * dt, param)
+    k4 = dt * dxdt(x + k3, t + dt, param)
+    return (1.0/6.0)*(k1 + 2*k2 + 2*k3 + k4)
+
 for i in range(0,N-1):
     x = [x1[i], y1[i], x2[i], y2[i], x3[i], y3[i], vx1[i], vy1[i], vx2[i], vy2[i], vx3[i], vy3[i]]
     step = rk4step(dxdt, t, x, dt, param)
@@ -63,7 +105,7 @@ for i in range(0,N-1):
     vx3[i+1] = step[10] + vx3[i]
     vy3[i+1] = step[11] + vy3[i]
 
-plt.plot(x1,y1, 'b.')
-plt.plot(x2,y2, 'r.')
-plt.plot(x3,y3, 'g.')
+plt.plot(x1,y1)
+plt.plot(x2,y2)
+plt.plot(x3,y3)
 plt.show()
