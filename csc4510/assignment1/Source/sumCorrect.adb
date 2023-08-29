@@ -2,7 +2,7 @@
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Long_Long_Integer_Text_IO; use Ada.Long_Long_Integer_Text_IO;
 
-procedure Sum is
+procedure SumCorrect is
 	-- variable declaration
     firstNumber : Long_Long_Integer; -- stores the first number input by the user
 	secondNumber : Long_Long_Integer; -- stores the second number input by the user
@@ -22,4 +22,4 @@ begin
 	Put (secondNumber, Width => 0);
 	Put (" = ");
 	Put (total, Width => 0);
-end Sum;
+end SumCorrect;
