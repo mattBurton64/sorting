@@ -1,0 +1,59 @@
+V "GNAT Lib v2020"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_LONG_LONG_INTEGERS
+
+U sum%b			sum.adb			af818a7f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.long_long_integer_text_io%s  a-llitio.ads	a-llitio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-llitio.ads		20200819050642 9aecf52b ada.long_long_integer_text_io%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050643 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D sum.adb		20230829175606 9b99aa39 sum%b
+D system.ads		20200819050647 085b6ffb system%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [sum standard 5 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 12|2r6 2r23 3r6 3r41
+X 4 a-llitio.ads
+18K13*Long_Long_Integer_Text_IO[8|46] 12|3w10 3r45
+X 7 a-textio.ads
+57K13*Text_IO 727e16 12|2w10 2r27
+86I12*Field{integer}
+465U14*Put 12|21s9 23s9
+508U14*Put_Line 12|12s5
+X 8 a-tiinio.ads
+59U14*Get 12|13s9[4|18] 14s9[4|18]
+80U14*Put 12|20s9[4|18] 22s9[4|18] 24s9[4|18]
+82i7 Width{7|86I12} 12|20r27[4|18] 22r28[4|18] 24r21[4|18]
+X 12 sum.adb
+5U11*Sum 5b11 25l5 25t8
+7i5 firstNumber{long_long_integer} 13m13 17r18 20r14
+8i9 secondNumber{long_long_integer} 14m13 17r32 22r14
+9i9 total{long_long_integer} 17m9 24r14
+
