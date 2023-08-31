@@ -7,9 +7,9 @@ Enter 2 integers to be added together
 Enter 2 integers to be added together
 0 + 0 = 0
 Enter 2 integers to be added together
-32 + -16 = 16
+32 + 16 = 48
 Enter 2 integers to be added together
--32 + -16 = -48
+32 + 16 = 48
 Enter 2 integers to be added together
 32 + 16 = 48
 Enter 2 integers to be added together
@@ -19,9 +19,9 @@ Enter 2 integers to be added together
 Enter 2 integers to be added together
 0 + 0 = 0
 Enter 2 integers to be added together
-32 + -16 = 16
+32 + 16 = 48
 Enter 2 integers to be added together
--32 + -16 = -48
+32 + 16 = 48
 Enter 2 integers to be added together
 32 + 16 = 48
 Enter 2 integers to be added together
@@ -31,9 +31,9 @@ Enter 2 integers to be added together
 Enter 2 integers to be added together
 0 + 0 = 0
 Enter 2 integers to be added together
-32 + -16 = 16
+32 + 16 = 48
 Enter 2 integers to be added together
--32 + -16 = -48
+32 + 16 = 48
 Enter 2 integers to be added together
 32 + 16 = 48
 Enter 2 integers to be added together
@@ -43,6 +43,6 @@ Enter 2 integers to be added together
 Enter 2 integers to be added together
 0 + 0 = 0
 Enter 2 integers to be added together
-32 + -16 = 16
+32 + 16 = 48
 Enter 2 integers to be added together
--32 + -16 = -48
+32 + 16 = 48

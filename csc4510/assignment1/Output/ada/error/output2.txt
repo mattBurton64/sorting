@@ -1,0 +1,12 @@
+Enter 2 integers to be added together
+10 + 10 = 20
+Enter 2 integers to be added together
+0 + 10 = 10
+Enter 2 integers to be added together
+0 + 0 = 0
+Enter 2 integers to be added together
+99999999999 + 99999999999 = 199999999998
+Enter 2 integers to be added together
+10 + 10 = 20
+Enter 2 integers to be added together
+10 + 10 = 20
