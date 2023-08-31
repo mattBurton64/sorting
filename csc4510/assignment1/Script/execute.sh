@@ -4,7 +4,7 @@
 testFiles=(`ls ./TestFiles`) # Gets a list of all the test files from the ./TestFiles directory
 size=${#testFiles[@]} # Gets the number of files
 
-# Creates directories for the output files
+# Creates new directories for the output files
 mkdir -p Output/cpp/correct
 mkdir -p Output/cpp/error
 mkdir -p Output/ada/correct
@@ -13,7 +13,7 @@ mkdir -p Output/ada/error
 fileNum=0
 while [ $fileNum -lt $size ] # For every test file...
 do
-    > "output$((fileNum + 1)).txt" # Creates a new output file name
+    echo "" >> "./TestFiles/${testFiles[$fileNum]}" # adds a newline at the end of the test file because the last line wasn't being processed
     while IFS= read -r line; # For every line in the test file...
     do 
         # Pipes the line from the test file into each of the four programs and stores thier results
@@ -23,5 +23,5 @@ do
         echo "$line" | ./Source/ada/sumerror >> Output/ada/error/output$((fileNum + 1)).txt 
 
     done < "./TestFiles/${testFiles[$fileNum]}" # Passes in each of the test files as input
-    fileNum=$((fileNum + 1)) # Incrementor
+    ((fileNum++)) # Incrementor
 done

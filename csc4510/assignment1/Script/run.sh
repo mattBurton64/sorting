@@ -11,3 +11,4 @@
 ./Script/compile.sh ada sumError
 
 ### EXECUTING TESTS ###
+./Script/execute.sh
