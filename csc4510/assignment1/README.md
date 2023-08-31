@@ -1,11 +1,17 @@
 # Assignment 1
 Learning to use Unix scripting to test programs
 
-## Requirements
-This assignment uses c++ and Ada programs, so you will need to have the compilers for both of those languages on your machine.
-
 ## Usage
+For commands to work as expected, make sure you are in teh assignment1/ directory.
 
+To compile, test, and compare the sum programs run...
+```
+./Script/ctc.sh
+```
+## Output
+EXAMPLE OF EXPECTED OUTPUT
+
+IGNORE EVERYTHING BELOW    OUTDATED
 navigate to the cpp folder
 ```
 cd cpp/
