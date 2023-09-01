@@ -18,7 +18,7 @@ then
         "ada") # for ada programs...
             cd Source/ada # move to the ada folder so that the executable is created there
             gnatmake $2.adb -o $2 # compile the program with the name of the second argument
-            echo "$2.cpp compiled";;
+            echo "$2.adb compiled";;
         *) echo "Error: invalid language argument" # if the first argument is neither cpp or ada, let the user know they made an error
             exit 1;; # failure
     esac
