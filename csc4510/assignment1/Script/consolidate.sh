@@ -14,6 +14,6 @@ echo "Compiling ada programs..."
 
 ### EXECUTING TESTS ###
 echo "Executing test files..."
-./Script/execute.sh
+./Script/testing.sh
 
 echo "Run complete"

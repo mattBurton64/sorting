@@ -13,6 +13,7 @@ mkdir -p Output/ada/error
 fileNum=0
 while [ $fileNum -lt $size ] # For every test file...
 do
+    # overwrites/creates the output file so the file is empty before the test
     > "Output/cpp/correct/output$((fileNum + 1)).txt"
     > "Output/cpp/error/output$((fileNum + 1)).txt"
     > "Output/ada/correct/output$((fileNum + 1)).txt"

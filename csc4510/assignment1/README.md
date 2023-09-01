@@ -6,7 +6,7 @@ For commands to work as expected, make sure you are in teh assignment1/ director
 
 To compile, test, and compare the programs run...
 ```
-./Script/run.sh
+./Script/consolidate.sh
 ```
 ## Output
 Below is an example of one of the output files after running a test file through the correct ada program...
