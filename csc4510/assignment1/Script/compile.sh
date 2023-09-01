@@ -12,10 +12,12 @@ else
     case $1 in
         "cpp")
             cd Source/cpp
-            g++ $2.cpp -o $2.o;;
+            g++ $2.cpp -o $2.o
+            echo "$2.cpp compiled" 
         "ada")
             cd Source/ada
-            gnatmake $2.adb -o $2;;
+            gnatmake $2.adb -o $2
+            echo "$2.cpp compiled";;
         *) echo "Error: invalid language argument" 
             exit 1;; # failure
     esac

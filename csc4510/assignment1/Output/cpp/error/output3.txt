@@ -1,0 +1,12 @@
+Enter 2 integers to be added together
+32 + 16 = 48
+Enter 2 integers to be added together
+0 + 128 = 128
+Enter 2 integers to be added together
+0 + 0 = 0
+Enter 2 integers to be added together
+0 + 0 = 0
+Enter 2 integers to be added together
+32 + 16 = 48
+Enter 2 integers to be added together
+32 + 16 = 48

@@ -13,7 +13,11 @@ mkdir -p Output/ada/error
 fileNum=0
 while [ $fileNum -lt $size ] # For every test file...
 do
-    echo "" >> "./TestFiles/${testFiles[$fileNum]}" # adds a newline at the end of the test file because the last line wasn't being processed
+    > "Output/cpp/correct/output$((fileNum + 1)).txt"
+    > "Output/cpp/error/output$((fileNum + 1)).txt"
+    > "Output/ada/correct/output$((fileNum + 1)).txt"
+    > "Output/ada/error/output$((fileNum + 1)).txt"
+
     while IFS= read -r line; # For every line in the test file...
     do 
         # Pipes the line from the test file into each of the four programs and stores thier results

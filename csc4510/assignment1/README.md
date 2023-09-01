@@ -4,47 +4,28 @@ Learning to use Unix scripting to test programs
 ## Usage
 For commands to work as expected, make sure you are in teh assignment1/ directory.
 
-To compile, test, and compare the sum programs run...
+To compile, test, and compare the programs run...
 ```
-./Script/ctc.sh
+./Script/run.sh
 ```
 ## Output
-EXAMPLE OF EXPECTED OUTPUT
-
-IGNORE EVERYTHING BELOW    OUTDATED
-navigate to the cpp folder
+Below is an example of one of the output files after running a test file through the correct ada program...
 ```
-cd cpp/
-```
-
-to compile the c++ programs use...
-```
-g++ sum.cpp -o sum.o
-g++ sumError.cpp -o sumError.o
-```
-
-to run the programs
-```
-./sum.o
-./sumError.o
+Enter 2 integers to be added together
+1 + 1 = 2
+Enter 2 integers to be added together
+0 + 1 = 1
+Enter 2 integers to be added together
+0 + 0 = 0
+Enter 2 integers to be added together
+999999999 + 999999999 = 1999999998
+Enter 2 integers to be added together
+1 + -1 = 0
+Enter 2 integers to be added together
+-1 + -1 = -2
 ```
 
-navigate back to the assignment1 folder, then to the ada folder
-```
-cd ../ada
-```
-
-to compile the Ada programs use...
-```
-gnatmake sum.adb
-gnatmake sumError.adb
-```
-
-to run the programs
-```
-./sum.o
-./sumerror.o
-```
-
-## Author
-Matt Burton
+## Credits
+Matt Burton - programs and scripts
+Ryan Hirscher - helped interpret the instructions
+AdaCore, Rosetta Code, Michael Oudshoorn, and ChatGPT - learning how to use unix scripts and ada
