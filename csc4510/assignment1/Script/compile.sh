@@ -8,7 +8,8 @@ if (( $# <= 1 ))
 then
     echo "Error: Missing one or more argument(s)"
     exit 1 # failure
-else
+elif (( $# == 2 ))
+then
     case $1 in
         "cpp")
             cd Source/cpp
@@ -21,5 +22,8 @@ else
         *) echo "Error: invalid language argument" 
             exit 1;; # failure
     esac
+else
+    echo "Error: Too many arguments"
+    exit 1 # failure
 fi
 exit # success
