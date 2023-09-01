@@ -13,7 +13,7 @@ else
         "cpp")
             cd Source/cpp
             g++ $2.cpp -o $2.o
-            echo "$2.cpp compiled" 
+            echo "$2.cpp compiled";;
         "ada")
             cd Source/ada
             gnatmake $2.adb -o $2
