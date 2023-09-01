@@ -27,5 +27,7 @@ Enter 2 integers to be added together
 
 ## Credits
 Matt Burton - programs and scripts
+
 Ryan Hirscher - helped interpret the instructions
+
 AdaCore, Rosetta Code, Michael Oudshoorn, and ChatGPT - learning how to use unix scripts and ada
