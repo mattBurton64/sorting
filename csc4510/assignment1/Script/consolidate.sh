@@ -16,4 +16,4 @@ echo "Compiling ada programs..."
 echo "Executing test files..."
 ./Script/testing.sh
 
-echo "Run complete"
+echo "Finished"

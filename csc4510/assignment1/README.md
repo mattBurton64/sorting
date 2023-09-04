@@ -26,8 +26,8 @@ Enter 2 integers to be added together
 ```
 
 ## Credits
-Matt Burton - programs and scripts
+Matt Burton - author of programs and scripts
 
-Ryan Hirscher - helped interpret the instructions
+Ryan Hirscher - helped me interpret the instructions/requirements
 
-AdaCore, Rosetta Code, Michael Oudshoorn, and ChatGPT - learning how to use unix scripts and ada
+Michael Oudshoorn, AdaCore, Rosetta Code, and ChatGPT - taught me how to use unix scripts and ada
