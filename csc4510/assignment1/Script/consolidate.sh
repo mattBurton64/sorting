@@ -11,9 +11,16 @@ echo "Compiling cpp programs..."
 echo "Compiling ada programs..."
 ./Script/compile.sh ada sumCorrect
 ./Script/compile.sh ada sumError
+echo ""
 
 ### EXECUTING TESTS ###
 echo "Executing test files..."
 ./Script/testing.sh
+echo ""
+
+### COMPARING OUTPUTS ###
+echo "Comparing output files..."
+./Script/compare.sh
+echo ""
 
 echo "Finished"

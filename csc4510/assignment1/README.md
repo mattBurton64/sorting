@@ -2,7 +2,7 @@
 Learning to use Unix scripting to test programs
 
 ## Usage
-For commands to work as expected, make sure you are in teh assignment1/ directory.
+For commands to work as expected, make sure you are in the assignment1/ directory.
 
 To compile, test, and compare the programs run...
 ```
