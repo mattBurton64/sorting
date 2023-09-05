@@ -14,15 +14,15 @@ echo "sumCorrect.cpp" # program label
 ./Script/testing.sh ./Source/cpp/sumCorrect.o # runs the test
 ./Script/compare.sh # runs the comparison script
 
-echo "sumError.cpp" # program label
+echo -e "\nsumError.cpp" # program label
 ./Script/testing.sh ./Source/cpp/sumError.o # runs the test
 ./Script/compare.sh # runs the comparison script
 
-echo "sumCorrect.adb" # program label
+echo -e "\nsumCorrect.adb" # program label
 ./Script/testing.sh ./Source/ada/sumCorrect # runs the test
 ./Script/compare.sh # runs the comparison script
 
-echo "sumError.adb" # program label
+echo -e "\nsumError.adb" # program label
 ./Script/testing.sh ./Source/ada/sumError # runs the test
 ./Script/compare.sh # runs the comparison script
 
