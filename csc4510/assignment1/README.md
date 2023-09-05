@@ -32,6 +32,7 @@ sumCorrect.cpp
 Test 0: PASSED
 Test 1: PASSED
 Test 2: PASSED
+
 sumError.cpp
 Test 0: FAILED
 10c10
@@ -63,10 +64,12 @@ Test 2: FAILED
 ---
 > -32 + -16 = -48
 
+
 sumCorrect.adb
 Test 0: PASSED
 Test 1: PASSED
 Test 2: PASSED
+
 sumError.adb
 Test 0: FAILED
 10c10
