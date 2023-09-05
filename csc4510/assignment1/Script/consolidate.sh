@@ -8,10 +8,9 @@ echo -e "Compiling programs\n==================" # section header
 ./Script/compile.sh ada sumCorrect # compiles the sumCorrect.adb program
 ./Script/compile.sh ada sumError # compiles the sumError.adb program
 
-
 ### TESTING ###
 echo -e "\nTesting\n=======" # section header
-echo -e "sumCorrect.cpp" # program label
+echo "sumCorrect.cpp" # program label
 ./Script/testing.sh ./Source/cpp/sumCorrect.o # runs the test
 ./Script/compare.sh # run the comparison script
 
