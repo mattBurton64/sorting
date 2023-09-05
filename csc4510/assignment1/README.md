@@ -1,6 +1,12 @@
 # Assignment 1
 Learning to use Unix scripting to test programs
 
+## Directories
+Correct - contains a set of files with the *expected* output for each test file
+Output - contains the most recent set of files with the *actual* output for each test file
+Source - contains the cpp and ada summing programs and their executables
+TestFiles - contains the set of test files that are passed into the programs as input
+
 ## Usage
 For commands to work as expected, make sure you are in the assignment1/ directory.
 
@@ -9,7 +15,7 @@ To compile, test, and compare the programs run...
 ./Script/consolidate.sh
 ```
 ## Output
-Below is an example of one of the output files after running a test file through the correct ada program...
+After running the consolidate script the terminal should look like this...
 ```
 Compiling programs
 ==================
@@ -22,15 +28,11 @@ sumError.adb compiled
 
 Testing
 =======
-
 sumCorrect.cpp
-Comparing output
 Test 0: PASSED
 Test 1: PASSED
 Test 2: PASSED
-
 sumError.cpp
-Comparing output
 Test 0: FAILED
 10c10
 < 1 + 1 = 2
@@ -60,16 +62,12 @@ Test 2: FAILED
 < 32 + 16 = 48
 ---
 > -32 + -16 = -48
-
 
 sumCorrect.adb
-Comparing output
 Test 0: PASSED
 Test 1: PASSED
 Test 2: PASSED
-
 sumError.adb
-Comparing output
 Test 0: FAILED
 10c10
 < 1 + 1 = 2
@@ -99,6 +97,8 @@ Test 2: FAILED
 < 32 + 16 = 48
 ---
 > -32 + -16 = -48
+
+Testing complete
 ```
 
 ## Credits

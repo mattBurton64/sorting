@@ -12,18 +12,19 @@ echo -e "Compiling programs\n==================" # section header
 echo -e "\nTesting\n=======" # section header
 echo "sumCorrect.cpp" # program label
 ./Script/testing.sh ./Source/cpp/sumCorrect.o # runs the test
-./Script/compare.sh # run the comparison script
+./Script/compare.sh # runs the comparison script
 
-echo -e "\nsumError.cpp" # program label
+echo "sumError.cpp" # program label
 ./Script/testing.sh ./Source/cpp/sumError.o # runs the test
-./Script/compare.sh # run the comparison script
+./Script/compare.sh # runs the comparison script
 
-echo -e "\nsumCorrect.adb" # program label
+echo "sumCorrect.adb" # program label
 ./Script/testing.sh ./Source/ada/sumCorrect # runs the test
-./Script/compare.sh # run the comparison script
+./Script/compare.sh # runs the comparison script
 
-echo -e "\nsumError.adb" # program label
+echo "sumError.adb" # program label
 ./Script/testing.sh ./Source/ada/sumError # runs the test
-./Script/compare.sh # run the comparison script
+./Script/compare.sh # runs the comparison script
 
+echo "Testing complete"
 exit # success
