@@ -1,12 +1,14 @@
 Enter 2 integers to be added together
-32 + 16 = 48
+1 + 1 = 2
 Enter 2 integers to be added together
-0 + 128 = 128
+0 + 1 = 1
 Enter 2 integers to be added together
 0 + 0 = 0
 Enter 2 integers to be added together
-2468101214 + 13579111315 = 16047212529
+999999999 + 999999999 = 1999999998
 Enter 2 integers to be added together
-32 + 16 = 48
+1 + 1 = 2
 Enter 2 integers to be added together
-32 + 16 = 48
+1 + 1 = 2
+Enter 2 integers to be added together
+1 + 1 = 2

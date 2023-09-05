@@ -2,9 +2,9 @@
 #include <iostream>
 
 int main () {
-  	int firstNumber = 0; // stores the first number input by the user
-	int secondNumber = 0; // stores the second number input by the user
-	int total = 0; // stores the total sum of the first and second values combined
+  	long long firstNumber = 0; // stores the first number input by the user
+	long long secondNumber = 0; // stores the second number input by the user
+	long long total = 0; // stores the total sum of the first and second values combined
 
   	// Handles user input
   	std::cout << "Enter 2 integers to be added together" << std::endl;

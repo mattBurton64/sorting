@@ -2,25 +2,29 @@
 # This script calls the other three scripts in order to compile the programs, execute the tests, and compare the results
 
 ### COMPILING ###
-# compiles the cpp programs
-echo "Compiling cpp programs..."
-./Script/compile.sh cpp sumCorrect
-./Script/compile.sh cpp sumError
+echo -e "Compiling programs\n==================" # section header
+./Script/compile.sh cpp sumCorrect # compiles the sumCorrect.cpp program
+./Script/compile.sh cpp sumError # compiles the sumError.cpp program
+./Script/compile.sh ada sumCorrect # compiles the sumCorrect.adb program
+./Script/compile.sh ada sumError # compiles the sumError.adb program
 
-# compiles the ada programs
-echo "Compiling ada programs..."
-./Script/compile.sh ada sumCorrect
-./Script/compile.sh ada sumError
-echo ""
 
-### EXECUTING TESTS ###
-echo "Executing test files..."
-./Script/testing.sh
-echo ""
+### TESTING ###
+echo -e "\nTesting\n=======" # section header
+echo -e "sumCorrect.cpp" # program label
+./Script/testing.sh ./Source/cpp/sumCorrect.o # runs the test
+./Script/compare.sh # run the comparison script
 
-### COMPARING OUTPUTS ###
-echo "Comparing output files..."
-./Script/compare.sh
-echo ""
+echo -e "\nsumError.cpp" # program label
+./Script/testing.sh ./Source/cpp/sumError.o # runs the test
+./Script/compare.sh # run the comparison script
 
-echo "Finished"
+echo -e "\nsumCorrect.adb" # program label
+./Script/testing.sh ./Source/ada/sumCorrect # runs the test
+./Script/compare.sh # run the comparison script
+
+echo -e "\nsumError.adb" # program label
+./Script/testing.sh ./Source/ada/sumError # runs the test
+./Script/compare.sh # run the comparison script
+
+exit # success

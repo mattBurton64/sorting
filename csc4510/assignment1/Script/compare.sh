@@ -1,16 +1,22 @@
 #!/bin/bash
 # This script compares the contents of the output files from the testing script to the correct files in the Correct/ directory
 
-testFiles=(`ls ./TestFiles`) # Gets a list of all the test files from the ./TestFiles directory
-size=${#testFiles[@]} # Gets the number of files
+outputFiles=(`ls ./Output`) # Gets a list of all the test files from the ./Output directory
+size=${#outputFiles[@]} # Gets the number of files
 
 fileNum=0
-while [ $fileNum -lt $size ] # For every test file...
+while [ $fileNum -lt $size ] # For every output file...
 do
-    diff ./Output/cpp/correct/output$((fileNum + 1)).txt ./Correct/output$((fileNum + 1)).txt 
-    #diff ./Output/cpp/error/output$((fileNum + 1)).txt ./Correct/output$((fileNum + 1)).txt
-    #diff ./Output/ada/correct/output$((fileNum + 1)).txt ./Correct/output$((fileNum + 1)).txt
-    #diff ./Output/ada/error/output$((fileNum + 1)).txt ./Correct/output$((fileNum + 1)).txt
+    fileDifference=$(diff ./Output/output$((fileNum + 1)).txt ./Correct/output$((fileNum + 1)).txt)
+
+    if (( $? == 0 )) # if the exit statement of the previous diff command is 0 then the test passed
+    then
+        echo -e "Test $fileNum: PASSED"
+    else
+        echo "Test $fileNum: FAILED"
+        echo -e "$fileDifference\n"
+    fi
 
     ((fileNum++)) # Incrementor
 done
+exit # success
