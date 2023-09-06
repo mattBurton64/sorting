@@ -19,15 +19,11 @@ then
     do
         currentTestFile="./TestFiles/${testFiles[$fileNum]}" # updates the current test file to the current file number
 
-        # overwrites/creates the output file so the file is empty before testing
-        > "Output/output$((fileNum + 1)).txt"
+        > "Output/output$((fileNum + 1)).txt" # overwrites/creates the output file so the file is empty before testing
 
-        while IFS= read -r line; # For every line in the test file... (IFS= ensures each input is the whole line from the test file)
-        do 
-            # Pipes the line from the test file into each of the four programs and stores thier results
-            echo "$line" | $1 >> Output/output$((fileNum + 1)).txt 
+        # Passes in the current test file into the program defined in argument 1 and stores thier results
+        $1 < "$currentTestFile" >> Output/output$((fileNum + 1)).txt 
 
-        done < "$currentTestFile" # Passes in the current test files as input
         ((fileNum++)) # Incrementor
     done
 else # error if there are too many arguments

@@ -4,6 +4,7 @@ Learning to use Unix scripting to test programs
 ## Directories
 Correct - contains a set of files with the *expected* output for each test file
 Output - contains the most recent set of files with the *actual* output for each test file
+Script - contains the four shell automation scripts used for compiling, testing, and comparing programs
 Source - contains the cpp and ada summing programs and their executables
 TestFiles - contains the set of test files that are passed into the programs as input
 
@@ -29,78 +30,60 @@ sumError.adb compiled
 Testing
 =======
 sumCorrect.cpp
-Test 0: PASSED
 Test 1: PASSED
 Test 2: PASSED
+Test 3: PASSED
+Test 4: PASSED
+Test 5: PASSED
+Test 6: PASSED
+Test 7: PASSED
 
 sumError.cpp
-Test 0: FAILED
-10c10
-< 1 + 1 = 2
----
-> 1 + -1 = 0
-12c12
-< 1 + 1 = 2
----
-> -1 + -1 = -2
-
-Test 1: FAILED
-10c10
-< 10 + 10 = 20
----
-> 10 + -10 = 0
-12c12
-< 10 + 10 = 20
----
-> -10 + -10 = -20
-
-Test 2: FAILED
-10c10
-< 32 + 16 = 48
----
-> 32 + -16 = 16
-12c12
-< 32 + 16 = 48
----
-> -32 + -16 = -48
-
-
-sumCorrect.adb
-Test 0: PASSED
 Test 1: PASSED
 Test 2: PASSED
-
-sumError.adb
-Test 0: FAILED
-10c10
+Test 3: PASSED
+Test 4: PASSED
+Test 5: FAILED
+2c2
 < 1 + 1 = 2
 ---
 > 1 + -1 = 0
-12c12
+
+Test 6: FAILED
+2c2
 < 1 + 1 = 2
 ---
 > -1 + -1 = -2
 
-Test 1: FAILED
-10c10
-< 10 + 10 = 20
----
-> 10 + -10 = 0
-12c12
-< 10 + 10 = 20
----
-> -10 + -10 = -20
+Test 7: PASSED
 
-Test 2: FAILED
-10c10
-< 32 + 16 = 48
----
-> 32 + -16 = 16
-12c12
-< 32 + 16 = 48
----
-> -32 + -16 = -48
+sumCorrect.adb
+Test 1: PASSED
+Test 2: PASSED
+Test 3: PASSED
+Test 4: PASSED
+Test 5: PASSED
+Test 6: PASSED
+Test 7: PASSED
 
+sumError.adb
+Test 1: PASSED
+Test 2: PASSED
+Test 3: PASSED
+Test 4: PASSED
+Test 5: FAILED
+2c2
+< 1 + 1 = 2
+---
+> 1 + -1 = 0
+
+Test 6: FAILED
+2c2
+< 1 + 1 = 2
+---
+> -1 + -1 = -2
+
+Test 7: PASSED
 Testing complete
 ```
 

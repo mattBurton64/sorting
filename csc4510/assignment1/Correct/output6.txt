@@ -1,2 +1,2 @@
 Enter 2 integers to be added together
-0 + 1 = 1
+-1 + -1 = -2

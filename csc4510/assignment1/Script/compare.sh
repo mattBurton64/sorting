@@ -11,9 +11,9 @@ do
 
     if (( $? == 0 )) # if the exit statement of the previous diff command is 0 then the test passed
     then
-        echo -e "Test $fileNum: PASSED"
+        echo -e "Test $((fileNum + 1)): PASSED"
     else
-        echo "Test $fileNum: FAILED"
+        echo "Test $((fileNum + 1)): FAILED"
         echo -e "$fileDifference\n"
     fi
 
