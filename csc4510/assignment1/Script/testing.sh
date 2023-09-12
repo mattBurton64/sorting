@@ -7,7 +7,7 @@ then
     exit 1 # failure
 elif (( $# == 1 )) # compiles if there are an appropriate amount of arguments
 then
-    # Test file structer structure from ~moudshoorn/CSC4510/Scripts/dirlisting.sh
+    # Test file structure from ~moudshoorn/CSC4510/Scripts/dirlisting.sh
     testFiles=(`ls ./TestFiles`) # Gets a list of all the test files from the ./TestFiles directory
     size=${#testFiles[@]} # Gets the number of files
 
