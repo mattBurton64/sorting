@@ -2,22 +2,149 @@
 Investigating how parameter passing works and differs in C++ and Java
 
 ## Usage
-To compile a Java program use
+Run the follow command from the assignment2 folder for it to work as expected
+
 ```
-javac progam.java
-```
-To run a Java program use
-```
-java Program
+./Script/consolidate.sh
 ```
 
-To compile a C++ program use
+## Output
+Below is a sample of the expected output
+
 ```
-g++ program.cpp -o program.o
-```
-To run a C++ program use
-```
-./program.o
+Compiling programs
+==================
+value.cpp compiled
+reference.cpp compiled
+value-result.cpp compiled
+value.java compiled
+
+Testing
+=======
+value.cpp
+Integer
+=======
+before: 1
+ after: 1
+
+Float
+=====
+before: 1
+ after: 1
+
+Boolean
+=======
+before: 1
+ after: 1
+
+Character
+=========
+before: a
+ after: a
+
+Small Array
+===========
+before: 0 0 0 0 0 
+ after: 1 1 1 1 1 
+
+Large Array
+===========
+before: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ after: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+reference.cpp
+Integer
+=======
+before: 1
+ after: 0
+
+Float
+=====
+before: 1
+ after: 0
+
+Boolean
+=======
+before: 1
+ after: 0
+
+Character
+=========
+before: a
+ after: z
+
+Small Array
+===========
+before: 0 0 0 0 0 
+ after: 1 1 1 1 1 
+
+Large Array
+===========
+before: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ after: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+value-result.cpp
+Integer
+=======
+before: 1
+ after: 0
+
+Float
+=====
+before: 1
+ after: 0
+
+Boolean
+=======
+before: 1
+ after: 0
+
+Character
+=========
+before: a
+ after: z
+
+Small Array
+===========
+before: 0 0 0 0 0 
+ after: 1 1 1 1 1 
+
+Large Array
+===========
+before: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ after: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+value.java
+Integer
+=======
+before: 1
+ after: 1
+
+Float
+=====
+before: 1.0
+ after: 1.0
+
+Boolean
+=======
+before: true
+ after: true
+
+Character
+=========
+before: a
+ after: a
+
+Small Array
+===========
+before: 0 0 0 0 0 
+ after: 1 1 1 1 1 
+
+Large Array
+===========
+before: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ after: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Testing complete
 ```
 
 ## Investigations
