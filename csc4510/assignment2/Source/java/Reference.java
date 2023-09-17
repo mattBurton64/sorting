@@ -59,7 +59,7 @@ class Reference {
 	    // Display the value of each test before and after being passed into their respective subroutines
         System.out.println("Integer\n=======");
         System.out.println("before: " + integer);
-        subInt(new int[]{integer});
+        subInt(new int[]{integer}); // passing in an array with one element to simulate passing by reference
         System.out.println(" after: " + integer);
 
         System.out.println("\nFloat\n=====");
