@@ -59,7 +59,7 @@ class Reference {
 	    // Display the value of each test before and after being passed into their respective subroutines
         System.out.println("Integer\n=======");
         System.out.println("before: " + integer);
-        subInt(new int[]{integer}); // passing in an array with one element to simulate passing by reference
+        subInt(new int[]{integer}); // passing in an array with one element to simulate passing by reference, idea from chatGPT because Java doesnt support passing by reference, even this doesnt work
         System.out.println(" after: " + integer);
 
         System.out.println("\nFloat\n=====");

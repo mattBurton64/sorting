@@ -8,7 +8,8 @@ echo -e "Compiling programs\n==================" # section header
 ./Script/compile.sh cpp value-result # compiles the result.cpp program
 ./Script/compile.sh cpp scope # compiles the scope.cpp program
 ./Script/compile.sh cpp alias # compiles the alias.cpp program
-#./Script/compile.sh cpp side-effect # compiles the side-effect.cpp program
+./Script/compile.sh cpp delete # compiles the delete.cpp program
+
 
 ./Script/compile.sh java Value # compiles the value.java program
 #./Script/compile.sh java Reference # compiles the reference.java program
@@ -35,15 +36,15 @@ echo -e "\nscope.cpp" # program label
 echo -e "\nalias.cpp" # program label
 ./Source/cpp/alias.o # runs the test
 
-#echo -e "\nside-effect.cpp" # program label
-#./Source/cpp/side-effect.o # runs the test
+echo -e "\ndelete.cpp" # program label
+./Source/cpp/delete.o # runs the test
 
 # Java
 echo -e "\nValue.java" # program label
 cd ./Source/java
 java Value # runs the test
 
-#echo -e "\nReference.java" # program label
+#echo -e "\nReference.java" # program label # Java does not support passing by reference for primitives
 #java Reference # runs the test
 
 echo -e "\nValueResult.java" # program label
@@ -52,11 +53,8 @@ java ValueResult # runs the test
 echo -e "\nScope.java" # program label
 java Scope # runs the test
 
-#echo -e "\nAlias.java" # program label
+#echo -e "\nAlias.java" # program label # Java does not support pointers so you can't have multiple variables referencing the same memory locations
 #java Alias # runs the test
-
-#echo -e "\nSide-effect.java" # program label
-#java Side-effect # runs the test
 
 echo "Testing complete"
 exit # success
