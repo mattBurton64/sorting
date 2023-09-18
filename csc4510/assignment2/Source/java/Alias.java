@@ -1,4 +1,5 @@
 // This program is intended to investigate the properties of "aliasing" in Java
+// Conclusion: Java's lack  of support for pointers  makes aliasing impossible (expirimental solution created by ChatGPT)
 public class Alias {
 
     static void sub(int[] integer) {

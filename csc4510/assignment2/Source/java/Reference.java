@@ -1,4 +1,5 @@
 // This program is intended to investigate the properties of passing "by reference" in Java
+// Conclusion: references in Java do not work for primitive data types (expirimental solution created by ChatGPT)
 import java.util.Arrays;
 
 class Reference {
