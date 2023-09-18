@@ -1,4 +1,4 @@
-// This program is intended to investigate the properties of passing by reference in Java
+// This program is intended to investigate the properties of passing "by reference" in Java
 import java.util.Arrays;
 
 class Reference {

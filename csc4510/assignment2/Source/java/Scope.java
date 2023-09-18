@@ -2,9 +2,10 @@
 class Scope {
     static int integer = -1; // declaring a global variable
 
-    static void sub(int[] integer) // declaring a subroutine which takes in an integer parameter by reference
+    static int sub(int integer) // declaring a subroutine which takes in an integer parameter by reference
     {
-        integer[0] = 0; // alter the value
+        integer = 0; // alter the value
+        return integer;
     }
 
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ class Scope {
         // Display the value of integer before and after being passed into the subroutine
         System.out.println("Integer\n=======");
         System.out.println("before: " + integer);
-        sub(new int[]{integer});
+        integer = sub(integer);
         System.out.println(" after: " + integer);
     }
 }
