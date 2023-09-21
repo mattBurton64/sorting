@@ -2,9 +2,9 @@
 Write a generic sorting method that works on all data types as well as a custom list of colors
 
 ## Directories
-Script - contains the four shell automation scripts used for compiling and executing the sort program
-Source - contains the cpp generic sort program and its executable
-TestFiles - contains the set of test files of various types that are passed into the program as input
+Script - contains the shell automation scripts used for compiling and executing the sort program
+Source - contains the generic C++ sort program and its executable
+TestFiles - contains the set of test files separated into folders which define their data type that are passed into the program as input
 
 ## Usage
 For commands to work as expected, make sure you are in the assignment3/ directory.
@@ -16,78 +16,200 @@ To execute the sorting program run...
 ## Output
 After running the consolidate script the terminal should look like this...
 ```
-Compiling programs
-==================
-sumCorrect.cpp compiled
-sumError.cpp compiled
-gnatmake: "sumCorrect" up to date.
-sumCorrect.adb compiled
-gnatmake: "sumError" up to date.
-sumError.adb compiled
+Compiling program
+=================
+sort.cpp compiled
 
-Testing
-=======
-sumCorrect.cpp
-Test 1: PASSED
-Test 2: PASSED
-Test 3: PASSED
-Test 4: PASSED
-Test 5: PASSED
-Test 6: PASSED
-Test 7: PASSED
+Executing
+=========
+sort.cpp
+characters.txt
+Vector before sorting...
+t
+f
+9
+0
+{
+]
+s
+v
+`
+:
+n
+S
+e
+V
+c
+1
+a
+x
+Z
+!
+.
+%
 
-sumError.cpp
-Test 1: PASSED
-Test 2: PASSED
-Test 3: PASSED
-Test 4: PASSED
-Test 5: FAILED
-2c2
-< 1 + 1 = 2
----
-> 1 + -1 = 0
+Vector after sorting...
+!
+%
+.
+0
+1
+9
+:
+S
+V
+Z
+]
+`
+a
+c
+e
+f
+n
+s
+t
+v
+x
+{
 
-Test 6: FAILED
-2c2
-< 1 + 1 = 2
----
-> -1 + -1 = -2
+colors.txt
+Vector before sorting...
+1
+0
+4
+3
+5
+2
+0
+6
+1
+4
+4
+2
 
-Test 7: PASSED
+Vector after sorting...
+0
+0
+1
+1
+2
+2
+3
+4
+4
+4
+5
+6
 
-sumCorrect.adb
-Test 1: PASSED
-Test 2: PASSED
-Test 3: PASSED
-Test 4: PASSED
-Test 5: PASSED
-Test 6: PASSED
-Test 7: PASSED
+floats.txt
+Vector before sorting...
+0
+-1.2
+-5.8
+1.1
+9.72
+2.264
+-2.353
+3.14
+0.2141
+6.32
+-7.293
 
-sumError.adb
-Test 1: PASSED
-Test 2: PASSED
-Test 3: PASSED
-Test 4: PASSED
-Test 5: FAILED
-2c2
-< 1 + 1 = 2
----
-> 1 + -1 = 0
+Vector after sorting...
+-7.293
+-5.8
+-2.353
+-1.2
+0
+0.2141
+1.1
+2.264
+3.14
+6.32
+9.72
 
-Test 6: FAILED
-2c2
-< 1 + 1 = 2
----
-> -1 + -1 = -2
+integers.txt
+Vector before sorting...
+-8
+5
+1
+99
+-32
+213
+40
+2
+-2
+723
+-9402
 
-Test 7: PASSED
-Testing complete
+Vector after sorting...
+-9402
+-32
+-8
+-2
+1
+2
+5
+40
+99
+213
+723
+
+strings.txt
+Vector before sorting...
+Java
+C++
+Python
+methods
+functions
+objects
+class
+123
+ABC
+xyz
+attributes
+variables
+error
+input
+output
+Ruby
+Ada
+Perl
+HTML
+TypeScript
+program
+code
+<element>
+
+Vector after sorting...
+123
+<element>
+ABC
+Ada
+C++
+HTML
+Java
+Perl
+Python
+Ruby
+TypeScript
+attributes
+class
+code
+error
+functions
+input
+methods
+objects
+output
+program
+variables
+xyz
+
+Sorting complete
 ```
 
 ## Credits
 Matt Burton - author of programs and scripts
 
-Ryan Hirscher - helped me interpret the instructions/requirements
-
-Michael Oudshoorn, AdaCore, Rosetta Code, and ChatGPT - taught me how to use unix scripts and ada
+ChatGPT - explained how to use templates and how to handle the custom type: color
