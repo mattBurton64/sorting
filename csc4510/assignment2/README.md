@@ -224,6 +224,6 @@ Dangling Pointers
 Write programs in C++ and Java that explore the parameter passing mechanism in each language, the issue of aliasing and side effects, and the interaction of scope rules, aliasing, side effects and parameter passing to identify strengths and weaknesses in each language. Specifically, you are asked to create small experiments to identify what kind of parameter passing mechanism each language supports (call by value, call by reference etc) and if it is consistent across different types of values/objects or if the semantics change is the entity passed is large. Can you create examples where multiple names exist to refer to the same memory location? What happens of you delete the memory location? Can you create a legal reference to a memory location that should no longer be accessible? How do pointers1 cause problems? As you can see from the examples provided, the code fragments you need to write to demonstrate your point are typically quite small.
 
 ## Credits
-Matt Burton - Programs and essay
-ChatGPT - experimental workarounds for features that don't exist in Java
-Concepts of Programming Langiages Chapter 9.5 - background information on parameter passing
+Matt Burton - Programs and essay  
+ChatGPT - experimental workarounds for features that don't exist in Java  
+Concepts of Programming Langiages Chapter 9.5 - background information on parameter passing  
