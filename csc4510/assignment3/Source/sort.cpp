@@ -1,40 +1,108 @@
-// This program is intended to sort any type of data including colors
+// This program is intended to sort any type of data including a custom type: color
 #include <iostream>
-#include <algorithm>
-#include <vector>
+#include <algorithm> // provides access to the sort method
+#include <vector> // dynamic arrays
 #include <string>
 using namespace std;
 
-enum COLOR {RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET};
+enum COLOR {RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET}; // Declare an enumeration for COLORS that ranges from RED to VIOLET
 
+// Declare a method for sorting using templates and the standard sort algorithm
 template<typename T>
-void MySort(vector<T>& vector){
-    sort(vector.begin(), vector.end());
+void MySort(vector<T>& values){
+    sort(values.begin(), values.end());
 }
 
+// Declare a method for iterating through vectors and outputting the contents of each item to the command line
 template<typename T>
-void outVector (vector<T> vector){
-    for (const auto& item : vector)
+void OutVector (vector<T> values){
+    for (int i = 0; i < values.size(); ++i)
     {
-        cout << item << endl;
+        cout << values[i] << endl;
     }
     cout << endl;
 }
 
-int main () {
-    vector<string> values;
-
-    // Read values from cin (standard input)
-    string line;
-    while (getline(cin, line)) {
-        values.push_back(line);
-    }
-
-    cout << "vector before sorting..." << endl;
-    outVector(values);
+// Decalres a method to handle the display/output of the vectors before and after being sorted
+template<typename T>
+void CallSort(vector<T> values)
+{
+    cout << "Vector before sorting..." << endl;
+    OutVector(values);
     MySort(values);
-    cout << "vector after sorting..." << endl;
-    outVector(values);
+    cout << "Vector after sorting..." << endl;
+    OutVector(values);
+}
 
+// Declares a method for initializing a vector of T data type
+template<typename T>
+vector<T> HandleInput() {
+    vector<T> values;
+    T value;
+    while (cin >> value) {
+        values.push_back(value);
+    }
+    return values;
+}
+
+// Declares a method for initializing a vector of colors
+vector<COLOR> HandleColorInput() {
+    vector<COLOR> values;
+    string color;
+    while (cin >> color) {
+        if (color == "ORANGE") {
+            values.push_back(ORANGE);
+        } else if (color == "RED") {
+            values.push_back(RED);
+        } else if (color == "BLUE") {
+            values.push_back(BLUE);
+        } else if (color == "GREEN") {
+            values.push_back(GREEN);
+        } else if (color == "INDIGO") {
+            values.push_back(INDIGO);
+        } else if (color == "YELLOW") {
+            values.push_back(YELLOW);
+        } else if (color == "VIOLET") {
+            values.push_back(VIOLET);
+        } else {
+            cerr << "Invalid color value: " << color << endl;
+        }
+    }
+    return values;
+}
+
+int main (int argc, char* argv[]) { // program takes in arguments
+
+    string dataType = argv[1]; // the first and only argument is used to define the expected dataType of the input test file
+
+    if (dataType == "character") 
+    {
+        vector<char> characterValues = HandleInput<char>();
+        CallSort(characterValues);
+    }
+    else if (dataType == "color") 
+    {
+        vector<COLOR> colorValues = HandleColorInput();
+        CallSort(colorValues);
+    }
+    else if (dataType == "float") 
+    {
+        vector<float> floatValues = HandleInput<float>();
+        CallSort(floatValues);
+    }
+    else if (dataType == "integer") 
+    {
+        vector<int> integerValues = HandleInput<int>();
+        CallSort(integerValues);
+    }
+    else if (dataType == "string") 
+    {
+        vector<string> stringValues = HandleInput<string>();
+        CallSort(stringValues);
+    }
+    else {
+        cerr << "Invalid dataType" << endl;
+    }
+    
     return 0;
 }
