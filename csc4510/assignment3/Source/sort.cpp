@@ -23,6 +23,15 @@ void OutVector (vector<T> values){
     cout << endl;
 }
 
+// Declare a specific output method for handling COLOR type
+void OutVector(vector<COLOR> values) {
+    const string colorNames[] = {"RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "INDIGO", "VIOLET"};
+    for (int i = 0; i < values.size(); ++i) {
+        cout << colorNames[values[i]] << endl;
+    }
+    cout << endl;
+}
+
 // Decalres a method to handle the display/output of the vectors before and after being sorted
 template<typename T>
 void CallSort(vector<T> values)
@@ -50,18 +59,18 @@ vector<COLOR> HandleColorInput() {
     vector<COLOR> values;
     string color;
     while (cin >> color) {
-        if (color == "ORANGE") {
-            values.push_back(ORANGE);
-        } else if (color == "RED") {
+        if (color == "RED") {
             values.push_back(RED);
-        } else if (color == "BLUE") {
-            values.push_back(BLUE);
-        } else if (color == "GREEN") {
-            values.push_back(GREEN);
-        } else if (color == "INDIGO") {
-            values.push_back(INDIGO);
+        } else if (color == "ORANGE") {
+            values.push_back(ORANGE);
         } else if (color == "YELLOW") {
             values.push_back(YELLOW);
+        } else if (color == "GREEN") {
+            values.push_back(GREEN);
+        } else if (color == "BLUE") {
+            values.push_back(BLUE);
+        } else if (color == "INDIGO") {
+            values.push_back(INDIGO); 
         } else if (color == "VIOLET") {
             values.push_back(VIOLET);
         } else {

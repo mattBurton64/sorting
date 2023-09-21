@@ -74,32 +74,32 @@ x
 
 colors.txt
 Vector before sorting...
-1
-0
-4
-3
-5
-2
-0
-6
-1
-4
-4
-2
+ORANGE
+RED
+BLUE
+GREEN
+INDIGO
+YELLOW
+RED
+VIOLET
+ORANGE
+BLUE
+BLUE
+YELLOW
 
 Vector after sorting...
-0
-0
-1
-1
-2
-2
-3
-4
-4
-4
-5
-6
+RED
+RED
+ORANGE
+ORANGE
+YELLOW
+YELLOW
+GREEN
+BLUE
+BLUE
+BLUE
+INDIGO
+VIOLET
 
 floats.txt
 Vector before sorting...
