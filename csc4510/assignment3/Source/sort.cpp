@@ -23,7 +23,7 @@ void OutVector (vector<T> values){
     cout << endl;
 }
 
-// Declare a specific output method for handling COLOR type
+// Overloading OutVector for colors
 void OutVector(vector<COLOR> values) {
     const string colorNames[] = {"RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "INDIGO", "VIOLET"}; // used for converting from enum ints to strings so we can output the color's name to the command line
     for (int i = 0; i < values.size(); ++i) {
@@ -54,8 +54,8 @@ vector<T> HandleInput() {
     return values;
 }
 
-// Method for initializing a vector of colors
-vector<COLOR> HandleColorInput() {
+// Overloading HandleInput for initializing a vector of colors
+vector<COLOR> HandleInput(COLOR) {
     vector<COLOR> values;
     string color;
     while (cin >> color) { // converts from strings to their corresponding color enum
@@ -91,7 +91,7 @@ int main (int argc, char* argv[]) { // program takes in arguments
     }
     else if (dataType == "color") 
     {
-        vector<COLOR> colorValues = HandleColorInput();
+        vector<COLOR> colorValues = HandleInput(COLOR());
         CallSort(colorValues);
     }
     else if (dataType == "float") 
