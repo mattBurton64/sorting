@@ -84,7 +84,9 @@ int main (int argc, char* argv[]) { // program takes in arguments
 
     string dataType = argv[1]; // the first and only argument is used to define the expected dataType of the input test file
 
-    if (dataType == "character") 
+    // uses the dataType to inititalize the right kind of vector corresponding to the test file
+    // then, outputs the pre and post sorted vector
+    if (dataType == "character")
     {
         vector<char> characterValues = HandleInput<char>();
         CallSort(characterValues);
