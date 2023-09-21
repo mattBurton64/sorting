@@ -7,13 +7,13 @@ using namespace std;
 
 enum COLOR {RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET}; // Declare an enumeration for COLORS that ranges from RED to VIOLET
 
-// Declare a method for sorting using templates and the standard sort algorithm
+// Method for sorting using templates and the standard sort algorithm
 template<typename T>
 void MySort(vector<T>& values){
     sort(values.begin(), values.end());
 }
 
-// Declare a method for iterating through vectors and outputting the contents of each item to the command line
+// Method for iterating through vectors of any type and outputting the contents of each item to the command line
 template<typename T>
 void OutVector (vector<T> values){
     for (int i = 0; i < values.size(); ++i)
@@ -25,14 +25,14 @@ void OutVector (vector<T> values){
 
 // Declare a specific output method for handling COLOR type
 void OutVector(vector<COLOR> values) {
-    const string colorNames[] = {"RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "INDIGO", "VIOLET"};
+    const string colorNames[] = {"RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "INDIGO", "VIOLET"}; // used for converting from enum ints to strings so we can output the color's name to the command line
     for (int i = 0; i < values.size(); ++i) {
         cout << colorNames[values[i]] << endl;
     }
     cout << endl;
 }
 
-// Decalres a method to handle the display/output of the vectors before and after being sorted
+// Method for handling the output of vectors before and after being sorted
 template<typename T>
 void CallSort(vector<T> values)
 {
@@ -43,7 +43,7 @@ void CallSort(vector<T> values)
     OutVector(values);
 }
 
-// Declares a method for initializing a vector of T data type
+// Method for initializing a vector of T data type from the standard input stream
 template<typename T>
 vector<T> HandleInput() {
     vector<T> values;
@@ -54,11 +54,11 @@ vector<T> HandleInput() {
     return values;
 }
 
-// Declares a method for initializing a vector of colors
+// Method for initializing a vector of colors
 vector<COLOR> HandleColorInput() {
     vector<COLOR> values;
     string color;
-    while (cin >> color) {
+    while (cin >> color) { // converts from strings to their corresponding color enum
         if (color == "RED") {
             values.push_back(RED);
         } else if (color == "ORANGE") {
