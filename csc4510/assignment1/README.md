@@ -2,11 +2,11 @@
 Learning to use Unix scripting to test programs
 
 ## Directories
-Correct - contains a set of files with the *expected* output for each test file
-Output - contains the most recent set of files with the *actual* output for each test file
-Script - contains the four shell automation scripts used for compiling, testing, and comparing programs
-Source - contains the cpp and ada summing programs and their executables
-TestFiles - contains the set of test files that are passed into the programs as input
+Correct - contains a set of files with the *expected* output for each test file  
+Output - contains the most recent set of files with the *actual* output for each test file  
+Script - contains the four shell automation scripts used for compiling, testing, and comparing programs  
+Source - contains the cpp and ada summing programs and their executables  
+TestFiles - contains the set of test files that are passed into the programs as input  
 
 ## Usage
 For commands to work as expected, make sure you are in the assignment1/ directory.
@@ -88,8 +88,6 @@ Testing complete
 ```
 
 ## Credits
-Matt Burton - author of programs and scripts
-
-Ryan Hirscher - helped me interpret the instructions/requirements
-
-Michael Oudshoorn, AdaCore, Rosetta Code, and ChatGPT - taught me how to use unix scripts and ada
+Matt Burton - author of programs and scripts  
+Ryan Hirscher - helped me interpret the instructions/requirements  
+Michael Oudshoorn, AdaCore, Rosetta Code, and ChatGPT - taught me how to use unix scripts and ada  

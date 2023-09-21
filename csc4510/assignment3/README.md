@@ -2,11 +2,9 @@
 Write a generic sorting method that works on all data types as well as a custom list of colors
 
 ## Directories
-Script - contains the shell automation scripts used for compiling and executing the sort program
-
-Source - contains the generic C++ sort program and its executable
-
-TestFiles - contains the set of test files separated into folders which define their data type that are passed into the program as input
+Script - contains the shell automation scripts used for compiling and executing the sort program  
+Source - contains the generic C++ sort program and its executable  
+TestFiles - contains the set of test files separated into folders which define their data type that are passed into the program as input  
 
 ## Usage
 For commands to work as expected, make sure you are in the assignment3/ directory.
@@ -212,6 +210,5 @@ Sorting complete
 ```
 
 ## Credits
-Matt Burton - author of programs and scripts
-
-ChatGPT - explained how to use templates and how to handle the custom type: color
+Matt Burton - author of programs and scripts  
+ChatGPT - explained how to use templates and how to handle the custom type: color  
