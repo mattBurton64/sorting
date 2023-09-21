@@ -3,7 +3,9 @@ Write a generic sorting method that works on all data types as well as a custom 
 
 ## Directories
 Script - contains the shell automation scripts used for compiling and executing the sort program
+
 Source - contains the generic C++ sort program and its executable
+
 TestFiles - contains the set of test files separated into folders which define their data type that are passed into the program as input
 
 ## Usage
