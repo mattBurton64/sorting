@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script is used to compile cpp programs given their file name (leave out the file suffix)
+# This script is used to compile C++ programs given their file name (leave out the file suffix)
 
 # $1 is the name of the program to compile
 
