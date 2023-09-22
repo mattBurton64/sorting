@@ -211,4 +211,5 @@ Sorting complete
 
 ## Credits
 Matt Burton - author of programs and scripts  
-ChatGPT - explained how to use templates and how to handle the custom type: color  
+ChatGPT - explained how to use templates and how to handle the custom type: color 
+Michael Oudshoorn - provided an exampe of generics in Ada for reference 
