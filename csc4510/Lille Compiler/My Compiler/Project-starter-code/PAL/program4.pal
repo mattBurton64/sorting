@@ -1,0 +1,74 @@
+JMP  0      14           (1) Jump over the predefined functions.
+LDV  0      0            (2) Load argument.                
+OPR  0      25           (3) Convert an integer to a real. 
+OPR  0      1            (4) Function value return         
+LDV  0      0            (5) Load argument.                
+OPR  0      26           (6) Convert an real to an integer.
+OPR  0      1            (7) Function value return         
+LDV  0      0            (8) Load argument.                
+OPR  0      27           (9) Convert an integer to a string.
+OPR  0      1            (10) Function value return         
+LDV  0      0            (11) Load argument.                
+OPR  0      28           (12) Convert an real to a string.  
+OPR  0      1            (13) Function value return         
+INC  0      4            (14) Reserve space for local variables
+JMP  0      28           (15) Jump to start of statements or block.
+INC  0      4            (16) Reserve space for declared variables and constants.
+INC  0      1            (17) Reserve space for local variables
+JMP  0      19           (18) Jump to start of statements or block.
+LDV  1      1            (19) Load variable or constant.    
+LCI  0      1            (20) Load integer value            
+OPR  0      3            (21) Add arithmetic expressions together.
+STO  1      1            (22) Store result.                 
+LDV  1      2            (23) Load variable or constant.    
+LDV  0      0            (24) Load value parameter.         
+OPR  0      3            (25) Add arithmetic expressions together.
+STO  1      2            (26) Store result.                 
+OPR  0      0            (27) Procedure return.             
+LCI  0      0            (28) Load integer value            
+STO  0      1            (29) Store result.                 
+LCI  0      0            (30) Load integer value            
+STO  0      2            (31) Store result.                 
+LCS  0      'Enter a number, 0 to exit: '       (32) Load string value             
+OPR  0      20           (33) Write string value.           
+RDI  0      0            (34) Read integer value.           
+LDV  0      0            (35) Load variable or constant.    
+LCI  0      0            (36) Load integer value            
+OPR  0      10           (37) Compare expressions.          
+JIF  0      40           (38) Do not exit loop              
+JMP  0      44           (39) unconditional jump            
+MST  0      0            (40) Mark stack.                   
+LDV  0      0            (41) Load actual value parameter   
+CAL  1      17           (42) Call the procedure.           
+JMP  0      32           (43) Jump to start of loop.        
+LCS  0      'Count is '       (44) Load string value             
+MST  1      0            (45) Mark stack.                   
+LDV  0      1            (46) Load variable or constant.    
+CAL  1      8            (47) Function call.                
+OPR  0      8            (48) Concatenate strings.          
+OPR  0      20           (49) Write string value.           
+OPR  0      21           (50) Terminate output to the current line.
+LCS  0      'Total is '       (51) Load string value             
+MST  1      0            (52) Mark stack.                   
+LDV  0      2            (53) Load variable or constant.    
+CAL  1      8            (54) Function call.                
+OPR  0      8            (55) Concatenate strings.          
+OPR  0      20           (56) Write string value.           
+OPR  0      21           (57) Terminate output to the current line.
+LDV  0      1            (58) Load variable or constant.    
+LCI  0      0            (59) Load integer value            
+OPR  0      11           (60) Compare expressions.          
+JIF  0      74           (61) jump if false                 
+LDV  0      2            (62) Load variable or constant.    
+LDV  0      1            (63) Load variable or constant.    
+OPR  0      6            (64) Divide arithmetic expression at tos-1 by expression at tos.
+STO  0      3            (65) Store result.                 
+LCS  0      'Average is '       (66) Load string value             
+MST  1      0            (67) Mark stack.                   
+LDV  0      3            (68) Load variable or constant.    
+CAL  1      8            (69) Function call.                
+OPR  0      8            (70) Concatenate strings.          
+OPR  0      20           (71) Write string value.           
+OPR  0      21           (72) Terminate output to the current line.
+JMP  0      74           (73) unconditional jump            
+JMP  0      0            (74) Halt program                  

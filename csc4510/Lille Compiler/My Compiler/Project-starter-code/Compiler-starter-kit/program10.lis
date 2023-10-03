@@ -1,0 +1,14 @@
+   1 program prog10 is
+   2 
+   3     function double (n1: value integer) return integer is
+   4     begin
+   5         return n1 + n1;
+   6     end;
+   7 
+   8 
+   9 begin
+  10 	for i in 1..5
+  11 	loop
+  12         writeln i, "  ", double(i);
+  13 	end loop;
+  14 end prog10;
