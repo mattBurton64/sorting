@@ -1,0 +1,65 @@
+JMP  0      14           (1) Jump over the predefined functions.
+LDV  0      0            (2) Load argument.                
+OPR  0      25           (3) Convert an integer to a real. 
+OPR  0      1            (4) Function value return.        
+LDV  0      0            (5) Load argument.                
+OPR  0      26           (6) Convert an real to an integer.
+OPR  0      1            (7) Function value return.        
+LDV  0      0            (8) Load argument.                
+OPR  0      27           (9) Convert an integer to a string.
+OPR  0      1            (10) Function value return.        
+LDV  0      0            (11) Load argument.                
+OPR  0      28           (12) Convert an real to a string.  
+OPR  0      1            (13) Function value return.        
+INC  0      2            (14) Reserve space for local variables
+JMP  0      17           (15) Jump to start of statements or block.
+INC  0      2            (16) Reserve space for declared variables and constants.
+LCI  0      0            (17) Load integer value.           
+STO  0      0            (18) Store result.                 
+LDV  0      0            (19) Load variable or constant.    
+LCI  0      5            (20) Load integer value.           
+OPR  0      12           (21) Compare expressions.          
+JIF  0      64           (22) Jump if false.                
+LCI  0      0            (23) Load integer value.           
+STO  0      1            (24) Store result.                 
+LDV  0      1            (25) Load variable or constant.    
+LCI  0      5            (26) Load integer value.           
+OPR  0      12           (27) Compare expressions.          
+JIF  0      53           (28) Jump if false.                
+LCS  0      '('          (29) Load string value.            
+OPR  0      20           (30) Write string value.           
+MST  1      0            (31) Mark stack.                   
+LDV  0      0            (32) Load variable or constant.    
+CAL  1      8            (33) Function call.                
+LCS  0      ', '         (34) Load string value.            
+OPR  0      8            (35) Concatenate strings.          
+MST  1      0            (36) Mark stack.                   
+LDV  0      1            (37) Load variable or constant.    
+CAL  1      8            (38) Function call.                
+OPR  0      8            (39) Concatenate strings.          
+LCS  0      ')   '       (40) Load string value.            
+OPR  0      8            (41) Concatenate strings.          
+OPR  0      20           (42) Write string value.           
+LDV  0      1            (43) Load variable or constant.    
+LCI  0      3            (44) Load integer value.           
+OPR  0      13           (45) Compare expressions.          
+JIF  0      48           (46) Do not exit loop.             
+JMP  0      53           (47) Unconditional jump.           
+LDV  0      1            (48) Load variable or constant.    
+LCI  0      1            (49) Load integer value.           
+OPR  0      3            (50) Add arithmetic expressions together.
+STO  0      1            (51) Store result.                 
+JMP  0      25           (52) Jump to start of loop.        
+OPR  0      21           (53) Terminate output to the current line.
+LDV  0      0            (54) Load variable or constant.    
+LCI  0      3            (55) Load integer value.           
+OPR  0      13           (56) Compare expressions.          
+JIF  0      59           (57) Do not exit loop.             
+JMP  0      64           (58) Unconditional jump.           
+LDV  0      0            (59) Load variable or constant.    
+LCI  0      1            (60) Load integer value.           
+OPR  0      3            (61) Add arithmetic expressions together.
+STO  0      0            (62) Store result.                 
+JMP  0      19           (63) Jump to start of loop.        
+OPR  0      21           (64) Terminate output to the current line.
+JMP  0      0            (65) Halt program.                 

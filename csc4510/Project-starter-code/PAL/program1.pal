@@ -1,0 +1,32 @@
+JMP  0      14           (1) Jump over the predefined functions.
+LDV  0      0            (2) Load argument.                
+OPR  0      25           (3) Convert an integer to a real. 
+OPR  0      1            (4) Function value return.        
+LDV  0      0            (5) Load argument.                
+OPR  0      26           (6) Convert an real to an integer.
+OPR  0      1            (7) Function value return.        
+LDV  0      0            (8) Load argument.                
+OPR  0      27           (9) Convert an integer to a string.
+OPR  0      1            (10) Function value return.        
+LDV  0      0            (11) Load argument.                
+OPR  0      28           (12) Convert an real to a string.  
+OPR  0      1            (13) Function value return.        
+INC  0      3            (14) Reserve space for local variables
+JMP  0      17           (15) Jump to start of statements or block.
+INC  0      3            (16) Reserve space for declared variables and constants.
+LCS  0      'Enter 2 numbers: '       (17) Load string value.            
+OPR  0      20           (18) Write string value.           
+RDI  0      0            (19) Read integer value.           
+RDI  0      1            (20) Read integer value.           
+LCS  0      'Their sum is: '       (21) Load string value.            
+OPR  0      20           (22) Write string value.           
+LDV  0      0            (23) Load variable or constant.    
+LDV  0      1            (24) Load variable or constant.    
+OPR  0      3            (25) Add arithmetic expressions together.
+STO  0      2            (26) Store result.                 
+MST  1      0            (27) Mark stack.                   
+LDV  0      2            (28) Load variable or constant.    
+CAL  1      8            (29) Function call.                
+OPR  0      20           (30) Write string value.           
+OPR  0      21           (31) Terminate output to the current line.
+JMP  0      0            (32) Halt program.                 
