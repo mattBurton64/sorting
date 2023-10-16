@@ -4,17 +4,17 @@ Write two programs in a functional language (Haskell). One should be simple and 
 
 ## Usage
 
-Note: The following steps expect you to be in the assignment5 directory to execute as intended  
+Note: The following steps expect you to be in the functional/ directory to execute as intended  
 To run the two Haskell programs execute
 
 ```terminal
-runghc functional/Simple.hs
+runghc Simple.hs
 ```
 
 and
 
 ```terminal
-runghc functional/Advanced.hs
+runghc Advanced.hs
 ```
 
 To use the doubleMe function from Simple.hs, first enter GHC
