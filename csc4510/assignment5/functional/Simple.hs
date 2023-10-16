@@ -4,7 +4,7 @@ module Simple (main) where
 
 main :: IO () -- The main function interacts with th ecommand line interface
 main = do -- The following line will be executed when Simple.hs is run
-  putStrLn "hello world" -- This prints "hello world" to the command line
+  putStrLn "This is a simple hello world program. To use the doubleMe method, execute this program from within the GHC terminal" -- This prints "hello world" to the command line
 
 -- Defines a function to take in an integer and doubles it
 doubleMe :: Int -> Int
