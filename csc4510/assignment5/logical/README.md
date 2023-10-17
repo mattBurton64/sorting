@@ -28,6 +28,12 @@ spouse('Allen', 'Anne').
 spouse('Allen', 'Grace').
 ```
 
+To exit the GNU Prolog interface use the follwoing command
+
+```GNU Prolog
+halt.
+```
+
 ## Output
 
 After loading the knowledgebase the terminal should look like this
@@ -40,7 +46,7 @@ compiling /Users/matt/Documents/GitHub/college-classes/csc4510/assignment5/logic
 (4 ms) yes
 ```
 
-After running the two example wueries you should see the following...
+After running the two example queries you should see the following...
 
 ```GNU Prolog
 | ?- spouse('Allen','Anne').

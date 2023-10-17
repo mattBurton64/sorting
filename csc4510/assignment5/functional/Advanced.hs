@@ -16,6 +16,7 @@ containsSeven n = '7' `elem` show n -- Checks if 7 is an element of the string n
 -- Generate a list comprehension for numbers from 1 to 19
 outputList :: [String] -- Creates a list of strings
 outputList = [output x | x <- [1..19]] -- Applies the output function to x for x from 1 to 19 
+  --"Where" cases provided by chatGPT
   where
     output x = if null result then show x else concat [result] -- If x meets no conditions then return x, otherwise return the list of conditions x satisfies
       where

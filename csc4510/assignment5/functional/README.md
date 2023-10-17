@@ -58,4 +58,4 @@ After running the doubleMe function you should see
 ## Credits
 
 Learning Haskell - http://learnyouahaskell.com/starting-out#babys-first-functions  
-Learning about the concatMap - ChatGPT
+concatMap - ChatGPT
