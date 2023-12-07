@@ -214,10 +214,14 @@ void error_handler::initialize_error_messages()
 	error_message[128] = "A factor is expected";
 	error_message[129] = "A multiplication operator or an AND symbol is expected.";
 	error_message[130] = "Exceeded maximum scope depth.";
-	error_message[131] = "Only integer or real values can be read in from the keyboard";
-	error_message[132] = "Identifier must be a procedure or a function name in this context";
-	error_message[133] = "A write statement can only write an integer, real or string value";
-	error_message[134] = "A writeln statement can only write an integer, real or string value";
+	error_message[131] = "Only integer or real values can be read in from the keyboard.";
+	error_message[132] = "Identifier must be a procedure or a function name in this context.";
+	error_message[133] = "A write statement can only write an integer, real or string value.";
+	error_message[134] = "A writeln statement can only write an integer, real or string value.";
+	error_message[135] = "Expected parameter list.";
+	error_message[136] = "Write must have an expression argument.";
+	error_message[137] = "Read statement must have an identifier argument.";
+	error_message[138] = "Call to procedure or function must have a parameter argument.";
 
 }
 

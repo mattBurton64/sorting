@@ -1,5 +1,5 @@
 program foo is
-    x : integer := 100;
+    x : constant integer := 100;
 begin
     null;
 end;

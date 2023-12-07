@@ -18,7 +18,7 @@ then
       currentTestFile="./TestFiles/$1/${testFiles[$fileNum]}" # updates the current test file to the current file number
 
       echo -e "$currentTestFile\n" # "${testFiles[$fileNum]}"  # prints the name of the test file
-      cat "$currentTestFile" # prints the contents of the test file
+      # cat "$currentTestFile" # prints the contents of the test file
       ./compiler "$currentTestFile" # compiles the test file
    
       echo -e "\n"

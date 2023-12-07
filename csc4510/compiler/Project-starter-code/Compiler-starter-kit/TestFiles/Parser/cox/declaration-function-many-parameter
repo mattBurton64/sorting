@@ -1,5 +1,5 @@
 program foo is
-    function bar(x: value integer; y: ref integer; z: ref string) return integer is
+    function bar(x: value integer; y: value integer; z: value string) return integer is
     begin
         null;
     end;

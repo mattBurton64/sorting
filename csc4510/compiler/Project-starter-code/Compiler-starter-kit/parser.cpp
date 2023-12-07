@@ -285,62 +285,73 @@ void parser::declaration()
     if (scan->have(symbol::left_paren_sym))
     {
       scan->get_token();
-
-      //param_list(); // cant make param_list work
-
-      // adds parameters to the id_tab and associates them with this procedure
-      do {
-        // resets the list of identifiers for this parameter type
-        token_list.clear();
-
-        // collects the list of identifiers for this parameter type
-        do {
-          // adds identifiers to the token list
-          if (scan->have(symbol::identifier))
-          {
-            token_list.push_back(scan->this_token());
-            scan->get_token();
-          }
-          // handles looping for more identifiers
-          comma_found = false;
-          if(scan->have(symbol::comma_sym))
-          {
-            scan->get_token();
-            comma_found = true;
-          }
-        } while (comma_found);
-
-        scan->must_be(symbol::colon_sym);
-
-        // store the whether these identifiers are reference or value parameters
-        lille_kind p_kind = param_kind();
-
-        // store the type of these identifiers as declared in the parameter list
-        ty = type();
-        
-        // handle looping for more parameters
-        semicolon_found = false;
-        if(scan->have(symbol::semicolon_sym))
-        {
-          scan->get_token();
-          semicolon_found = true;
-        }
-
-         // add identifiers to the id_table as parameters associated with this procedure
-        for (int i = 0; i < token_list.size(); i++)
-        {
-          // add this parameter to the id_table
-          id_table_entry* param_id = new id_table_entry(token_list[i], ty, p_kind, id_tab->scope(), 0, lille_type::type_unknown);
-          id_tab->add_table_entry(param_id);
-
-          // associate this parameter with this procedure
-          proc_id->add_param(param_id);
-        }
-      } while (semicolon_found);
-      if (id_tab->trace_all())
+      if (!scan->have(symbol::right_paren_sym))
       {
-        cout << "Parser: declaration() added parameters to the id_table: " << endl;
-        id_tab->dump_id_table(false);
+        //param_list(); // cant make param_list work
+
+        // adds parameters to the id_tab and associates them with this procedure
+        do {
+          // resets the list of identifiers for this parameter type
+          token_list.clear();
+
+          // collects the list of identifiers for this parameter type
+          do {
+            // adds identifiers to the token list
+            if (scan->have(symbol::identifier))
+            {
+              token_list.push_back(scan->this_token());
+              scan->get_token();
+            }
+            // handles looping for more identifiers
+            comma_found = false;
+            if(scan->have(symbol::comma_sym))
+            {
+              scan->get_token();
+              comma_found = true;
+            }
+          } while (comma_found);
+
+          scan->must_be(symbol::colon_sym);
+
+          // store the whether these identifiers are reference or value parameters
+          lille_kind p_kind = param_kind();
+
+          // store the type of these identifiers as declared in the parameter list
+          ty = type();
+          
+          // handle looping for more parameters
+          semicolon_found = false;
+          if(scan->have(symbol::semicolon_sym))
+          {
+            scan->get_token();
+            semicolon_found = true;
+          }
+
+          // add identifiers to the id_table as parameters associated with this procedure
+          for (int i = 0; i < token_list.size(); i++)
+          {
+            // add this parameter to the id_table
+            id_table_entry* param_id = new id_table_entry(token_list[i], ty, p_kind, id_tab->scope(), 0, lille_type::type_unknown);
+            id_tab->add_table_entry(param_id);
+
+            // associate this parameter with this procedure
+            proc_id->add_param(param_id);
+          }
+        } while (semicolon_found);
+        if (id_tab->trace_all())
+        {
+          cout << "Parser: declaration() added parameters to the id_table: " << endl;
+          id_tab->dump_id_table(false);
+        }
+      }
+      else
+        error->flag(scan->this_token(), 135); // expected parameter list
+      
+      if (!scan->have(symbol::right_paren_sym))
+      {
+        error->flag(scan->this_token(), 95); // abnormal parameter list ermination
+        while (!scan->have(symbol::right_paren_sym))
+          scan->get_token();
       }
 
       scan->must_be(symbol::right_paren_sym);
@@ -385,61 +396,72 @@ void parser::declaration()
     if (scan->have(symbol::left_paren_sym))
     {
       scan->get_token();
+      if (!scan->have(symbol::right_paren_sym))
+      {
+        //param_list(); // cant make param_lsit work
 
-      //param_list(); // cant make param_lsit work
-
-      // adds the list of identifiers to the id_table as parameters and associates them with this function     
-      // handles parameters
-      do {
-        // resets the identifier list
-        token_list.clear();
-        // handles lists of identifiers
+        // adds the list of identifiers to the id_table as parameters and associates them with this function     
+        // handles parameters
         do {
-          // stores identifier tokens
-          if (scan->have(symbol::identifier))
+          // resets the identifier list
+          token_list.clear();
+          // handles lists of identifiers
+          do {
+            // stores identifier tokens
+            if (scan->have(symbol::identifier))
+            {
+              token_list.push_back(scan->this_token());
+              scan->get_token();
+            }
+            //handles looping for more identifiers
+            comma_found = false;
+            if(scan->have(symbol::comma_sym))
+            {
+              scan->get_token();
+              comma_found = true;
+            }
+          } while (comma_found);
+
+          scan->must_be(symbol::colon_sym);
+
+          // function parameters must be pass by value
+          lille_kind p_kind = param_kind();
+          if (p_kind.is_kind(lille_kind::ref_param))
+            error->flag(scan->this_token(), 123);
+
+          // stores the type of the parameter list as declared
+          ty = type();
+          
+          // handles looping for more parameters
+          semicolon_found = false;
+          if(scan->have(symbol::semicolon_sym))
           {
-            token_list.push_back(scan->this_token());
             scan->get_token();
+            semicolon_found = true;
           }
-          //handles looping for more identifiers
-          comma_found = false;
-          if(scan->have(symbol::comma_sym))
+
+          // add identifiers to the the id_table and associate them with this function
+          for (int i = 0; i < token_list.size(); i++)
           {
-            scan->get_token();
-            comma_found = true;
-          }
-        } while (comma_found);
+            // add parameters to id_table
+            id_table_entry* param_id = new id_table_entry(token_list[i], ty, p_kind, id_tab->scope(), 0, lille_type::type_unknown);
+            id_tab->add_table_entry(param_id);
 
-        scan->must_be(symbol::colon_sym);
+            // link parameters with this function
+            func_id->add_param(param_id);
+          }  
+        } while (semicolon_found);
+      }
+      else
+        error->flag(scan->this_token(), 135); // expected parameter list
 
-        // function parameters must be pass by value
-        lille_kind p_kind = param_kind();
-        if (p_kind.is_kind(lille_kind::ref_param))
-          error->flag(scan->this_token(), 123);
-
-        // stores the type of the parameter list as declared
-        ty = type();
-        
-        // handles looping for more parameters
-        semicolon_found = false;
-        if(scan->have(symbol::semicolon_sym))
-        {
+      if (!scan->have(symbol::right_paren_sym))
+      {
+        error->flag(scan->this_token(), 95); // abnormal parameter list ermination
+        while (!scan->have(symbol::right_paren_sym))
           scan->get_token();
-          semicolon_found = true;
-        }
+      }
 
-        // add identifiers to the the id_table and associate them with this function
-        for (int i = 0; i < token_list.size(); i++)
-        {
-          // add parameters to id_table
-          id_table_entry* param_id = new id_table_entry(token_list[i], ty, p_kind, id_tab->scope(), 0, lille_type::type_unknown);
-          id_tab->add_table_entry(param_id);
-
-          // link parameters with this function
-          func_id->add_param(param_id);
-        }  
-      } while (semicolon_found);
-      
       scan->must_be(symbol::right_paren_sym);
     }
 
@@ -649,6 +671,9 @@ void parser::simple_statement()
     {
       scan->get_token(); // consume the left parentheses
 
+      if (scan->have(symbol::right_paren_sym))
+        error->flag(scan->this_token(), 138); // procedure or function call must have a parameter
+
       if (!(id_info->tipe().is_type(lille_type::type_proc) or id_info->tipe().is_type(lille_type::type_func)))
         error->flag(scan->this_token(), 90); // identifier must be a procedure or function name in this context
       
@@ -666,7 +691,7 @@ void parser::simple_statement()
         actual_param_count++; // increment the parameter count
         if (actual_param_count > formal_param_count)
         {
-          error->flag(scan->this_token(), 97); // too many actual parameters
+          error->flag(scan->this_token(), 100); // too many actual parameters
           while (!scan->have(symbol::right_paren_sym))
             scan->get_token();
           break;
@@ -676,13 +701,19 @@ void parser::simple_statement()
         lille_type expected_param_type = id_info->nth_parameter(actual_param_count)->tipe();
 
         if (!param_type.is_equal(expected_param_type))
+        {
           error->flag(scan->this_token(), 98); // Actual and formal parameter types do not match
+          while (!scan->have(symbol::right_paren_sym))
+            scan->get_token();
+          break;
+        }
 
         if (scan->have(symbol::comma_sym))
           scan->get_token();
         else
           break;
       }
+
       scan->must_be(symbol::right_paren_sym);
 
       if (actual_param_count < formal_param_count)
@@ -754,21 +785,32 @@ void parser::simple_statement()
       scan->get_token();
       open_paren = true;
     }
-    id_table_entry* id = ident(false);
-    if (!(id->tipe().is_equal(lille_type::type_integer) or id->tipe().is_equal(lille_type::type_real)))
-      error->flag(scan->this_token(), 131); // read statement can only read integer and real identifiers
-    
-    while(scan->have(symbol::comma_sym))
+    if(!scan->have(symbol::right_paren_sym))
     {
-      scan->get_token();
-      id = ident(false);
+      id_table_entry* id = ident(false);
+      if (id_tab->trace_all()) cout << "Parser: simple_statement() read:\n" << id->to_string() << endl;
       if (!(id->tipe().is_equal(lille_type::type_integer) or id->tipe().is_equal(lille_type::type_real)))
         error->flag(scan->this_token(), 131); // read statement can only read integer and real identifiers
+      
+      while(scan->have(symbol::comma_sym))
+      {
+        scan->get_token();
+        id = ident(false);
+        if (!(id->tipe().is_equal(lille_type::type_integer) or id->tipe().is_equal(lille_type::type_real)))
+          error->flag(scan->this_token(), 131); // read statement can only read integer and real identifiers
+      }
     }
+    else
+      error->flag(scan->this_token(), 137); // read statement must have an indentifier
+    
     if (open_paren)
-      scan->must_be(symbol::right_paren_sym);
+      scan->must_be(symbol::right_paren_sym);  
     else if (scan->have(symbol::right_paren_sym))
-      error->flag(scan->this_token(), 83); // simple statement expected, unbalanced parentheses
+    {
+      error->flag(scan->this_token(), 20); // missing left parenthese
+      while (!scan->have(symbol::semicolon_sym))
+        scan->get_token();
+    }
   }
   else if (scan->have(symbol::write_sym))
   {
@@ -781,6 +823,9 @@ void parser::simple_statement()
       scan->get_token();
       open_paren = true;
     }
+
+    if (!(scan->have(symbol::not_sym) or scan->have(symbol::odd_sym) or scan->have(symbol::left_paren_sym) or scan->have(symbol::identifier) or scan->have(symbol::integer) or scan->have(symbol::real_num) or scan->have(symbol::strng) or scan->have(symbol::true_sym) or scan->have(symbol::false_sym) or scan->have(symbol::plus_sym) or scan->have(symbol::minus_sym)))
+      error->flag(scan->this_token(), 136); // write must have an expression argument
     
     lille_type expr_type = expr();
 
@@ -798,7 +843,11 @@ void parser::simple_statement()
     if (open_paren)
       scan->must_be(symbol::right_paren_sym);  
     else if (scan->have(symbol::right_paren_sym))
-      error->flag(scan->this_token(), 83); // simple statement expected, unbalanced parentheses
+    {
+      error->flag(scan->this_token(), 20); // missing left parenthese
+      while (!scan->have(symbol::semicolon_sym))
+        scan->get_token();
+    }
   }
   else if (scan->have(symbol::writeln_sym))
   {
@@ -830,7 +879,11 @@ void parser::simple_statement()
     if (open_paren)
       scan->must_be(symbol::right_paren_sym);  
     else if (scan->have(symbol::right_paren_sym))
-      error->flag(scan->this_token(), 83); // simple statement expected, unbalanced parentheses
+    {
+      error->flag(scan->this_token(), 20); // missing left parenthese
+      while (!scan->have(symbol::semicolon_sym))
+        scan->get_token();
+    }
   }
   else if (scan->have(symbol::null_sym))
   {
@@ -1032,7 +1085,7 @@ lille_type parser::expr()
 
   return_type = simple_expr();
 
-  if (scan->have(symbol::greater_than_sym) or scan->have(symbol::less_than_sym) or scan->have(symbol::equals_sym) or scan->have(symbol::not_equals_sym) or scan->have(symbol::less_or_equal_sym) or scan->have(symbol::greater_or_equal_sym)) 
+  if (scan->have(symbol::greater_than_sym) or scan->have(symbol::less_than_sym) or scan->have(symbol::equals_sym) or scan->have(symbol::not_equals_sym) or scan->have(symbol::reverse_sym) or scan->have(symbol::less_or_equal_sym) or scan->have(symbol::greater_or_equal_sym)) 
   {
     if (id_tab->trace_all())
       cout << "Parser: expr() relop" << endl;
@@ -1166,8 +1219,11 @@ lille_type parser::expr2()
       scan->must_be(symbol::or_sym);
     lille_type second_return_type = term();
     
-      if (!return_type.is_equal(second_return_type))
-      error->flag(scan->this_token(), 114); // Types of expressions must match
+    if (!return_type.is_equal(second_return_type))
+      if ((return_type.is_equal(lille_type::type_integer) and second_return_type.is_equal(lille_type::type_real)) or ((return_type.is_equal(lille_type::type_real) and second_return_type.is_equal(lille_type::type_integer))))
+        return_type = lille_type::type_real; // expection for integer and real operations
+      else
+        error->flag(scan->this_token(), 114); // Types of expressions must match
   }
 
   if (debugging)
@@ -1211,8 +1267,11 @@ lille_type parser::term()
       scan->must_be(symbol::and_sym);
     lille_type second_return_type = factor();
     
-      if (!return_type.is_equal(second_return_type))
-      error->flag(scan->this_token(), 114); // Types of expressions must match
+    if (!return_type.is_equal(second_return_type))
+      if ((return_type.is_equal(lille_type::type_integer) and second_return_type.is_equal(lille_type::type_real)) or ((return_type.is_equal(lille_type::type_real) and second_return_type.is_equal(lille_type::type_integer))))
+        return_type = lille_type::type_real; // expection for integer and real operations
+      else
+        error->flag(scan->this_token(), 114); // Types of expressions must match
   }
 
   if (debugging)
@@ -1293,8 +1352,7 @@ lille_type parser::primary()
       cout << "Parser: primary() not" << endl;
 
     scan->get_token();
-    expr();
-    return_type = lille_type(lille_type::type_boolean);
+    return_type = expr();
   }
 
   // handle an odd expression
@@ -1304,8 +1362,7 @@ lille_type parser::primary()
       cout << "Parser: primary() odd" << endl;
 
     scan->get_token();
-    expr();
-    return_type = lille_type(lille_type::type_boolean);
+    return_type = expr();
   }
 
   // handle a simple expression
@@ -1353,7 +1410,13 @@ lille_type parser::primary()
       {
         // increment the parameter count
         actual_param_count++;
-
+        if (actual_param_count > formal_param_count)
+        {
+          error->flag(scan->this_token(), 100); // too many actual parameters
+          while (!scan->have(symbol::right_paren_sym))
+            scan->get_token();
+          break;
+        }
         // track the parameter type and expected parameter type
         lille_type param_type = expr();
         lille_type expected_param_type = id_info->nth_parameter(actual_param_count)->tipe();
@@ -1371,8 +1434,8 @@ lille_type parser::primary()
       // consume the right parenthese
       scan->must_be(symbol::right_paren_sym);
 
-      // number of actual parameters must match the number of formal parameters
-      if (actual_param_count != formal_param_count)
+      // too few actual parameters
+      if (actual_param_count < formal_param_count)
         error->flag(scan->this_token(), 97);
     }
   }
