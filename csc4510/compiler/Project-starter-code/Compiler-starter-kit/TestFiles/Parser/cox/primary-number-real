@@ -1,0 +1,8 @@
+program foo is
+    function bar return real is
+    begin
+        return 123.456e-3;
+    end;
+begin
+    null;
+end;

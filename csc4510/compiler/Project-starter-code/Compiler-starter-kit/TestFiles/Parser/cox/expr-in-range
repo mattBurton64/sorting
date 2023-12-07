@@ -1,0 +1,8 @@
+program foo is
+    function bar return boolean is
+    begin
+        return 123 in 100 .. 200;
+    end;
+begin
+    null;
+end;

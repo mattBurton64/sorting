@@ -1,0 +1,9 @@
+program prog1 is
+	i, j, k : real;
+	procedure div(x: value integer; y: value integer; sum: ref real) is
+    begin
+        div(i, j, k);
+    end;
+begin
+	null;
+end ;

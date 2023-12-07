@@ -1,0 +1,8 @@
+program foo is
+    function bar return string is
+    begin
+        return """Never go in against a Sicilian when death is on the line!"", Vizzini, The Princess Bride";
+    end;
+begin
+    null;
+end;

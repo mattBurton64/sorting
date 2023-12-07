@@ -1,0 +1,23 @@
+   1 program prog7 is
+   2     i: integer;
+   3 
+   4 begin
+   5     i := 15;
+   6     writeln "Before the first for loop, i = " & int2string(i);
+   7 	writeln "In ascending order: ";
+   8 	for i in 1..5
+   9 	loop
+  10 		write int2string(i) & " ";
+  11 	end loop;
+  12 	writeln;
+  13     writeln "Between the for loops, i = " & int2string(i);
+  14 	writeln "In descending order: ";
+  15 	for i in reverse 1..5
+  16 	loop
+  17 		write int2string(i) & " ";
+  18 	end loop;
+  19 	writeln;
+  20     writeln "After the second for loops, i = " & int2string(i);
+  21 end prog7;
+  22 
+  23 

@@ -1,0 +1,4 @@
+program foo is
+begin
+    read();
+end;

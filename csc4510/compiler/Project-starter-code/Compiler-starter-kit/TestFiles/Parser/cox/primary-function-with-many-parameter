@@ -1,0 +1,13 @@
+program foo is
+    function bar(x : value integer; y : value integer; z : value integer) return integer is
+    begin
+        return x * y * z;
+    end;
+
+    function baz return integer is
+    begin
+        return bar(10, 20 / 10, 30 * 2);
+    end;
+begin
+    null;
+end;

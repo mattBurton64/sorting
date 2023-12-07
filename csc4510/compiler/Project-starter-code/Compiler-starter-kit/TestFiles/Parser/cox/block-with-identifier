@@ -1,0 +1,5 @@
+program prog_empty is
+
+begin
+    null;
+end foo;

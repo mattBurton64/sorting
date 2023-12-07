@@ -1,0 +1,10 @@
+program foo is
+    procedure bar(spam : value string; eggs : value integer; ham : value string; bacon : value integer) is
+    begin
+        null;
+    end;
+
+    baz : constant integer := 456;
+begin
+    bar("foo", 123, "bar", baz);
+end;

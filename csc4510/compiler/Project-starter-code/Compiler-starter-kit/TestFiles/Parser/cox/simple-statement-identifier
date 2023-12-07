@@ -1,0 +1,5 @@
+program foo is
+    x : constant integer := 123;
+begin
+    x;
+end;

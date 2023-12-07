@@ -1,0 +1,5 @@
+program foo is
+    x, y, z : integer;
+begin
+    null;
+end;

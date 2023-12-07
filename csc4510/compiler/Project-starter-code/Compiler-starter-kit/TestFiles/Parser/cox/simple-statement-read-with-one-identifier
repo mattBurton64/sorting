@@ -1,0 +1,5 @@
+program foo is
+    foo : real;
+begin
+    read(foo);
+end;

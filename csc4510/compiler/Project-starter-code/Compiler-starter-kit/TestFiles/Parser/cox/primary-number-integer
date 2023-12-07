@@ -1,0 +1,8 @@
+program foo is
+    function bar return integer is
+    begin
+        return 1234567;
+    end;
+begin
+    null;
+end;

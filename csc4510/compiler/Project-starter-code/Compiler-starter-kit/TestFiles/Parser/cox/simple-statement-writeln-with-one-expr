@@ -1,0 +1,4 @@
+program foo is
+begin
+    writeln(100);
+end;

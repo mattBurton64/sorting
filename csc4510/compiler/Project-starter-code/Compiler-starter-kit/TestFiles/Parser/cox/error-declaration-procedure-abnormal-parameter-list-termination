@@ -1,0 +1,8 @@
+program foo is
+    procedure div(x: value integer; y: value integer, sum: ref real) is
+    begin
+        null;
+    end;
+begin
+   null; 
+end;

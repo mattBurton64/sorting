@@ -1,0 +1,8 @@
+program foo is
+    function bar() return integer is
+    begin
+        null;
+    end;
+begin
+    null;
+end;

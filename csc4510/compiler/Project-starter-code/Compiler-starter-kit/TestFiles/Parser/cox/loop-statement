@@ -1,0 +1,6 @@
+program foo is
+begin
+    loop
+        writeln("infinite", "loop");
+    end loop;
+end;
