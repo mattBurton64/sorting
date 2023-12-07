@@ -1,0 +1,79 @@
+-- Comment
+
+
+
+-- well formed strings
+
+"This is a string"
+
+"This is a ""string"""
+
+""""""""""
+
+
+
+-- malformed strings
+
+"
+
+hello"
+
+"" -- empty strings not permitted
+
+
+
+-- well formed integers
+
+1
+
+123
+
+-7
+
+4E2
+
+5E+3
+
+
+
+-- integer range_sym integer
+
+25..100
+
+
+
+-- malformed integers
+
+3E-1
+
+3E2.4
+
+
+
+-- well formed real numbers
+
+1.2
+
+123.456
+
+26.2E4
+
+27.3E+5
+
+28.4E-6
+
+
+
+
+
+-- malformed real numbers
+
+2.
+
+.4
+
+3.e
+
+6.7E
+
+2.6E-3.7
