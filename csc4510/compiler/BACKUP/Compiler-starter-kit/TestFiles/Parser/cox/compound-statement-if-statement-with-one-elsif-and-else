@@ -1,0 +1,8 @@
+program foo is
+begin
+    if 1 = 2 then
+        null;
+    elsif 1 = 3 then
+        null;
+    end if;
+end;

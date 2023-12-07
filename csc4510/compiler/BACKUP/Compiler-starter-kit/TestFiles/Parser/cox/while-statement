@@ -1,0 +1,9 @@
+program foo is
+begin
+    while 1 <> 2
+    loop
+        null;
+        null;
+        null;
+    end loop;
+end;

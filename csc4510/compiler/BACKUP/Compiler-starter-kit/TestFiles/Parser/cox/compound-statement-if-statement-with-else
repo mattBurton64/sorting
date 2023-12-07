@@ -1,0 +1,10 @@
+program foo is
+    number : integer;
+begin
+    if 1 <> 2 then
+        read(number);
+        writeln("number is", number);
+    else
+        writeln("not reading value...");
+    end if;
+end;

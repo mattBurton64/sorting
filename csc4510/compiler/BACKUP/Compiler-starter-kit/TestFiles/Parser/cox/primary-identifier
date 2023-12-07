@@ -1,0 +1,9 @@
+program foo is
+    function bar return integer is
+        x : constant integer := 100;
+    begin
+        return x;
+    end;
+begin
+    null;
+end;

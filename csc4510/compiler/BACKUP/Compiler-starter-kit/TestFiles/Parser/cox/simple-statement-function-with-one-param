@@ -1,0 +1,8 @@
+program foo is
+    procedure bar(baz : value integer) is
+    begin
+        null;
+    end;
+begin
+    bar(12);
+end;

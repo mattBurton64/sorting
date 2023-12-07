@@ -1,0 +1,9 @@
+program foo is
+begin
+    for i in reverse 1 .. 5
+    loop
+        null;
+        null;
+        null;
+    end loop;
+end;

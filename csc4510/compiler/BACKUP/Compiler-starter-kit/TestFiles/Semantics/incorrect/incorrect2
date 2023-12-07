@@ -1,0 +1,4 @@
+program prog1 is
+begin
+	i := 6;
+end ;

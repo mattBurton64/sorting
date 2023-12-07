@@ -1,0 +1,10 @@
+program foo is
+    x : real;
+begin
+    x := 10.0;
+
+    if x / 2 <> 0.5 then
+        x := x + 10;
+        writeln("x is", x);
+    end if;
+end;

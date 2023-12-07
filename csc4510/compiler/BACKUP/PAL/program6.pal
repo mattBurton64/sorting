@@ -1,0 +1,76 @@
+JMP  0      14           (1) Jump over the predefined functions.
+LDV  0      0            (2) Load argument.                
+OPR  0      25           (3) Convert an integer to a real. 
+OPR  0      1            (4) Function value return.        
+LDV  0      0            (5) Load argument.                
+OPR  0      26           (6) Convert an real to an integer.
+OPR  0      1            (7) Function value return.        
+LDV  0      0            (8) Load argument.                
+OPR  0      27           (9) Convert an integer to a string.
+OPR  0      1            (10) Function value return.        
+LDV  0      0            (11) Load argument.                
+OPR  0      28           (12) Convert an real to a string.  
+OPR  0      1            (13) Function value return.        
+INC  0      0            (14) Reserve space for local variables
+JMP  0      16           (15) Jump to start of statements or block.
+LCS  0      'In ascending order: '       (16) Load string value.            
+OPR  0      20           (17) Write string value.           
+OPR  0      21           (18) Terminate output to the current line.
+JMP  0      43           (19) Unconditional jump.           
+INC  0      3            (20) Reserve space for for-loop control variable, lb and ub values.
+LCI  0      1            (21) Load integer value.           
+OPR  0      23           (22) Duplicate top of stack        
+STO  0      0            (23) Store the lower bound of the range as initial value of for loop parameter.
+STO  0      1            (24) Store the lower bound of the range as the start value of the loop.
+LCI  0      5            (25) Load integer value.           
+STO  0      2            (26) Store the upper bound of the range as the end value of the loop.
+LDV  0      0            (27) Load the value of the for loop parameter.
+LDV  0      2            (28) Load the end value of the for loop.
+OPR  0      15           (29) Check if loop parameter <= end value.
+JIF  0      42           (30) Jump if false.                
+MST  2      0            (31) Mark stack.                   
+LDV  0      0            (32) Load For loop parameter.      
+CAL  1      8            (33) Function call.                
+LCS  0      ' '          (34) Load string value.            
+OPR  0      8            (35) Concatenate strings.          
+OPR  0      20           (36) Write string value.           
+LDV  0      0            (37) Load the value of the for loop parameter.
+LCI  0      1            (38) Load the value 1 onto the stack.
+OPR  0      3            (39) Add values.                   
+STO  0      0            (40) Store value of for loop parameter.
+JMP  0      27           (41) Jump to beginning of for loop for next iteration.
+OPR  0      0            (42) Return from for loop.         
+MST  0      0            (43) Mark stack for for loop.      
+CAL  0      20           (44) Effectively call the for loop - 0 parameters.
+OPR  0      21           (45) Terminate output to the current line.
+LCS  0      'In descending order: '       (46) Load string value.            
+OPR  0      20           (47) Write string value.           
+OPR  0      21           (48) Terminate output to the current line.
+JMP  0      73           (49) Unconditional jump.           
+INC  0      3            (50) Reserve space for for-loop control variable, lb and ub values.
+LCI  0      1            (51) Load integer value.           
+STO  0      2            (52) Store the lower bound of the range as the end value of the loop.
+LCI  0      5            (53) Load integer value.           
+OPR  0      23           (54) Duplicate top of stack        
+STO  0      0            (55) Store the upper bound of the range as initial value of for loop parameter.
+STO  0      1            (56) Store the upper bound of the range as the start value of the loop.
+LDV  0      0            (57) Load the value of the for loop parameter.
+LDV  0      2            (58) Load the end value of the for loop.
+OPR  0      13           (59) Check if loop parameter >= end value.
+JIF  0      72           (60) Jump if false.                
+MST  2      0            (61) Mark stack.                   
+LDV  0      0            (62) Load For loop parameter.      
+CAL  1      8            (63) Function call.                
+LCS  0      ' '          (64) Load string value.            
+OPR  0      8            (65) Concatenate strings.          
+OPR  0      20           (66) Write string value.           
+LDV  0      0            (67) Load the value of the for loop parameter.
+LCI  0      1            (68) Load the value 1 onto the stack.
+OPR  0      4            (69) Subtract values.              
+STO  0      0            (70) Store value of for loop parameter.
+JMP  0      57           (71) Jump to beginning of for loop for next iteration.
+OPR  0      0            (72) Return from for loop.         
+MST  0      0            (73) Mark stack for for loop.      
+CAL  0      50           (74) Effectively call the for loop - 0 parameters.
+OPR  0      21           (75) Terminate output to the current line.
+JMP  0      0            (76) Halt program.                 

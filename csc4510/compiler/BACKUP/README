@@ -1,0 +1,22 @@
+README
+
+2 programs are provided to illustrate a complete working compiler, including code generation. Note you are not asked to implement code generation as part of your project.
+
+To compile a program (prog.lille is the name of the project to be compiled in these examples):
+./compiler prog.lille	# Generates proj.pal if there are no errors
+
+./compiler -h		# help flag shows all flags that can be used with the compiler
+Valid flags are:
+	-h		help
+	-l		create a listing (.lis) file
+	-o  filename	create an output code file with a specified filename. 
+
+To execute the generated pal code:
+./pal			# tries to execute the pal code found in a file named CODE
+./pal prog.pal		# tries to execure the pal code found in the file named prog.pal
+
+./pal -h		# help flag shows all flags that can be used with the interpreter.
+Valid flags are:
+	-h		help
+	-l		Create a listing file to standard output showing he PAL code and memory
+			Stack contents during the execution process.

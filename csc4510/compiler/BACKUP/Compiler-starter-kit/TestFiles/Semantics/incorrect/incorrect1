@@ -1,0 +1,7 @@
+program prog1 is
+begin
+	for i in 1 .. 5
+    loop
+		i := 6;
+    end loop;
+end ;

@@ -1,0 +1,7 @@
+program foo is
+    x, y: integer;
+begin
+    read(x);
+    y := x + 2;
+    exit when y <> 10;
+end;

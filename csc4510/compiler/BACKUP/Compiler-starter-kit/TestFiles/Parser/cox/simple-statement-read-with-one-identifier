@@ -1,0 +1,5 @@
+program bar is
+    foo : real;
+begin
+    read(foo);
+end;

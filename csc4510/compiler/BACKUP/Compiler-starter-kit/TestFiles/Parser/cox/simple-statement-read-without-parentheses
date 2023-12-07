@@ -1,0 +1,5 @@
+program foo is
+    bar, baz, qux : integer;
+begin
+    read bar, baz, qux;
+end;

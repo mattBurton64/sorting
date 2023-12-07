@@ -1,0 +1,5 @@
+program foo is
+    x : integer;
+begin
+    read x);
+end;

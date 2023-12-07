@@ -1,0 +1,5 @@
+program prog1 is
+	x : string;
+begin
+	x := 3;
+end ;

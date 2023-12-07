@@ -1,0 +1,8 @@
+program foo is 
+    procedure bar is
+    begin
+        null;
+    end;
+begin
+    null;
+end;

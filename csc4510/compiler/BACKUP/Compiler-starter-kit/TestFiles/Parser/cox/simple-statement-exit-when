@@ -1,0 +1,4 @@
+program foo is
+begin
+    exit when 1 <> 2;
+end;

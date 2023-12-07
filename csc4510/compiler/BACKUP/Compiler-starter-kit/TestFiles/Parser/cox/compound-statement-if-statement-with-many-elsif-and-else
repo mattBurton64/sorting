@@ -1,0 +1,14 @@
+program foo is
+begin
+    if 1 = 2 then
+        null;
+    elsif 1 = 3 then
+        null;
+    elsif 1 <> 4 then
+        null;
+    elsif 1 <> 5 then
+        null;
+    else
+        null;
+    end if;
+end;

@@ -1,0 +1,11 @@
+-- COMMENT: COMMENTS CAN APPEAR BEFORE A PROGARM
+
+program foo is
+    x : integer;
+begin
+    -- COMMENT: SET X TO TEN
+    -- COMMENT: THIS IS ANOTHER COMMENT
+    x := 10;
+end;
+
+-- COMMENT: COMMENTS CAN APPEAR AFTER A PROGRAM

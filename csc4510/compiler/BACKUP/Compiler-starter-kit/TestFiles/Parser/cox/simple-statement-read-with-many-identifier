@@ -1,0 +1,5 @@
+program prog is
+    foo, bar, baz : integer;
+begin
+    read(foo, bar, baz);
+end;

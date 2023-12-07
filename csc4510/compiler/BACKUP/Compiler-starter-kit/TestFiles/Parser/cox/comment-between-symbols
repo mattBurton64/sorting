@@ -1,0 +1,9 @@
+program foo is
+    x : integer;
+begin
+    x 
+    -- COMMENT IN BETWEEN X AND BECOMES SYMBOL
+    := 
+    -- COMMENT IN BETWEEN X SYMBOL AND INTEGER
+    10;
+end;

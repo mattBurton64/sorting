@@ -1,0 +1,8 @@
+program foo is
+    function bar return string is
+    begin
+        return "foo" & "bar" & "baz";
+    end;
+begin
+    null;
+end;
