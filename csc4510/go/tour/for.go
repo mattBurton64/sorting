@@ -2,12 +2,11 @@ package main
 
 import "fmt"
 
-func main() {
+func for() {
 	sum := 0
 	for i := 0; i < 10; i++ {
 		sum += i
 	}
-	fmt.Println(sum)
 }
 
 func while() {
@@ -15,7 +14,6 @@ func while() {
 	for i < 10 {
 		sum += i
 	}
-	fmt.Println(sum)
 }
 
 func infinite() {
