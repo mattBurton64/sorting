@@ -56,13 +56,22 @@ Task *pickNextTask(Queue *queue)
 
 /*
    Precondition: The schedule is called with a queue object containing a list of tasks
-   Postcondition: Each task in the queue is executed in the order defined by pickNextTask().
-                  After a task is executed it is removed from the queue and its memory is freed up
-                  The queue is emptied
+   Postcondition: The queue is output to the terminal before executing
+                  Each task in the queue is executed in the order defined by pickkNextTask().
+                  Tasks are removed from the queue and its memory is freed up
+                  The average wait, response, and turn around times are output to the terminal
 */
 void schedule(Queue *queue)
 {
+   // Output the current
    traverse(queue);
+
+   // Initialize variables for tracking wait, response, and turn around times
+   int numberOfTasks = queue->length;
+   int currentTime = 0;
+   int totalWaitTime = 0;
+   int totalResponseTime = 0;
+   int totalTurnAroundTime = 0;
 
    // Loop through the queue until it is empty
    while (!isEmpty(queue))
@@ -73,7 +82,18 @@ void schedule(Queue *queue)
       // Run the next task for a QUANTUM time slice
       run(task, task->burst);
 
+      // Handle calculations for total timess
+      totalWaitTime += currentTime;
+      totalResponseTime += currentTime;
+      currentTime += task->burst;
+      totalTurnAroundTime += currentTime + task->burst;
+
       // Free up the memory assigned by malloc
       free(task);
    }
+
+   // Output average wait, response, and turn around times
+   printf("Average Wait Time: %.2f\n", (float)totalWaitTime / numberOfTasks);
+   printf("Average Response Time: %.2f\n", (float)totalResponseTime / numberOfTasks);
+   printf("Average Turn Around Time: %.2f\n", (float)totalTurnAroundTime / numberOfTasks);
 }
