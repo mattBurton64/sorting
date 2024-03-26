@@ -9,9 +9,7 @@
 // add a task to the list
 void add(Queue *queue, char *name, int priority, int burst)
 {
-   fprintf(stdout, "Adding task to queue\n");
-
-   /*int tid = queue->length + 1;
+   int tid = queue->length + 1;
 
    Task *task = (Task *)malloc(sizeof(Task));
    if (task == NULL)
@@ -26,25 +24,22 @@ void add(Queue *queue, char *name, int priority, int burst)
    task->priority = priority;
    task->burst = burst;
 
-   enqueue(queue, task);*/
+   enqueue(queue, task);
 }
 
 // select a task from the queue
 Task *pickNextTask(Queue *queue)
 {
-   fprintf(stdout, "Picking next task\n");
-
-   /*return dequeue(queue);*/
+   return dequeue(queue);
 }
 
 // invoke the scheduler
 void schedule(Queue *queue)
 {
-   fprintf(stdout, "Running the schedule\n");
-   /*while (queue->length > 0)
+   while (queue->length > 0)
    {
       Task *task = pickNextTask(queue);
       run(task, QUANTUM);
       free(task);
-   }*/
+   }
 }
