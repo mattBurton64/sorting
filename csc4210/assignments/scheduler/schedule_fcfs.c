@@ -63,12 +63,12 @@ Task *pickNextTask(Queue *queue)
 */
 void schedule(Queue *queue)
 {
-   // Output the current
+   // Output the total
    traverse(queue);
 
    // Initialize variables for tracking wait, response, and turn around times
    int numberOfTasks = queue->length;
-   int currentTime = 0;
+   int totalTime = 0;
    int totalWaitTime = 0;
    int totalResponseTime = 0;
    int totalTurnAroundTime = 0;
@@ -79,14 +79,20 @@ void schedule(Queue *queue)
       // Pick the next task to run
       Task *task = pickNextTask(queue);
 
-      // Run the next task for a QUANTUM time slice
+      // Calculate response time
+      totalResponseTime += totalTime;
+
+      // Calculate wait time
+      totalWaitTime += totalTime;
+
+      // Run the task for a QUANTUM time slice
       run(task, task->burst);
 
-      // Handle calculations for total timess
-      totalWaitTime += currentTime;
-      totalResponseTime += currentTime;
-      currentTime += task->burst;
-      totalTurnAroundTime += currentTime + task->burst;
+      // Update total time
+      totalTime += task->burst;
+
+      // Calculate turnaround time
+      totalTurnAroundTime += totalTime;
 
       // Free up the memory assigned by malloc
       free(task);
