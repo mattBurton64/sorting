@@ -22,6 +22,12 @@ Execute: ./fcfs schedule.txt
 */
 void add(Queue *queue, char *name, int priority, int burst)
 {
+   if (isFull(queue))
+   {
+      fprintf(stderr, "Cannot add tasks to a full queue\n");
+      exit(2);
+   }
+
    // Create the new task id
    int tid = queue->length + 1;
 
@@ -50,6 +56,11 @@ void add(Queue *queue, char *name, int priority, int burst)
 */
 Task *pickNextTask(Queue *queue)
 {
+   if (isEmpty(queue))
+   {
+      fprintf(stderr, "Cannot pick the next task from an empty queue");
+      exit(3);
+   }
    // Returns the first task in the queue and removes it from the queue
    return dequeue(queue);
 }
@@ -63,6 +74,12 @@ Task *pickNextTask(Queue *queue)
 */
 void schedule(Queue *queue)
 {
+   if (isEmpty(queue))
+   {
+      fprintf(stderr, "Cannot process the schedule of an empty queue");
+      exit(4);
+   }
+
    // Output the total
    traverse(queue);
 
