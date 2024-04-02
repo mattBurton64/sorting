@@ -4,7 +4,7 @@ Date: Apr 1 2024
 Class: CCS4210
 About: This program is designed to implement the round robin algorithm for executing a scheduled queue of tasks
 Compile: make rr
-Execute: ./rr schedule.txt
+Execute: ./rr rr-schedule.txt
 */
 #include "queue.h"
 #include "task.h"
