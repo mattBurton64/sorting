@@ -3,7 +3,7 @@ Names: Matt Burton, Emma Jerrier, William Phipps
 Date: Mar 26 2024
 Class: CCS4210
 About: This program is designed to implement the shortest job first algorithm when executing a scheduled queue of tasks
-Compile: make fcfs
+Compile: make sjf
 Execute: ./sjf schedule.txt
 */
 #include "queue.h"
